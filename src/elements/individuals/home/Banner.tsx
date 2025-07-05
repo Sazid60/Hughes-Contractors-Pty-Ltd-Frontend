@@ -1,0 +1,33 @@
+export default function Banner() {
+    return (
+        <div className="relative w-full h-[calc(100vh-5rem)] md:h-[calc(100vh-2rem)] overflow-hidden text-white">
+            <img
+                src="/Banner.jpg"
+                alt="Construction Banner"
+                className="absolute top-0 left-0 w-full h-full object-cover bg-bottom"
+            />
+
+            {/* Dark overlay */}
+            <div className="absolute inset-0 bg-black/70" />
+
+            {/* Content */}
+            <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
+                <p className="text-sm md:text-base uppercase tracking-widest text-gray-300 mb-4">
+                    Your Trusted Service Provider
+                </p>
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight max-w-4xl">
+                    FROM VISION TO VIDEO – WE BUILD STORIES
+                </h1>
+
+                <div className="mt-8 flex flex-wrap gap-4 justify-center">
+                    <button className="bg-[#ff5c00] hover:bg-[#e44e00] text-white font-semibold px-6 py-3 rounded-full text-sm shadow-md transition">
+                        Book Appointment →
+                    </button>
+                    <button className="border border-white text-white font-semibold px-6 py-3 rounded-full text-sm shadow-md hover:bg-white hover:text-black transition">
+                        Our Services →
+                    </button>
+                </div>
+            </div>
+        </div>
+    );
+}
