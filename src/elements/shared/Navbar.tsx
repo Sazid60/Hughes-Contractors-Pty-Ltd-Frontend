@@ -34,7 +34,7 @@ export default function Navbar() {
                     </div>
                 </Link>
 
-                <div className="hidden md:flex items-center gap-6 border px-4 py-2  shadow-l">
+                <div className="hidden md:flex items-center gap-6 border px-4 py-2 backdrop-blur-xs   shadow-2xl">
                     {navLinks.map(({ to, label }) => (
                         <NavLink
                             key={to}
