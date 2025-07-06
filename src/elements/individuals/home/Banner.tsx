@@ -1,6 +1,6 @@
 export default function Banner() {
     return (
-        <div className="relative w-full h-[calc(100vh-5rem)] md:h-[calc(100vh-2rem)] overflow-hidden text-white">
+        <section className="relative w-full h-[calc(100vh-2rem)] md:h-[calc(100vh-1rem)] overflow-hidden text-white">
             <img
                 src="/Banner.jpg"
                 alt="Construction Banner"
@@ -20,14 +20,14 @@ export default function Banner() {
                 </h1>
 
                 <div className="mt-8 flex flex-wrap gap-4 justify-center">
-                    <button className="bg-[#ff5c00] hover:bg-[#e44e00] text-white font-semibold px-6 py-3 rounded-full text-sm shadow-md transition">
-                        Book Appointment →
+                    <button className="bg-[#ff5c00] hover:bg-[#e44e00] text-white font-semibold px-5 py-3 hover:scale-101 text-sm shadow-md transition">
+                        Appointment →
                     </button>
-                    <button className="border border-white text-white font-semibold px-6 py-3 rounded-full text-sm shadow-md hover:bg-white hover:text-black transition">
-                        Our Services →
+                    <button className="border border-white text-white font-semibold px-5 py-3  text-sm shadow-md hover:scale-101  transition">
+                        Services →
                     </button>
                 </div>
             </div>
-        </div>
+        </section>
     );
 }

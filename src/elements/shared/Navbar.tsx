@@ -7,15 +7,18 @@ export default function Navbar() {
 
     const navLinks = [
         { to: "/", label: "Home" },
-        { to: "/projects", label: "Projects" },
         { to: "/mission-vision", label: "Mission-Vision" },
+        { to: "/what-we-do", label: "What-We-Do?" },
+        { to: "/projects", label: "Projects" },
+        { to: "/equipments", label: "Our-Equipments" },
+
     ];
 
     const toggleMenu = () => setIsMenuOpen(prev => !prev);
     const closeMenu = () => setIsMenuOpen(false);
 
     return (
-        <>
+        <nav>
             {/* Top Navbar */}
             <div className="fixed top-0 left-0 w-full z-50 px-3 sm:px-4 md:px-6 lg:px-10 xl:px-12 py-3 md:py-4 flex justify-between items-center backdrop-blur-xs bg-black/50 rounded-b-2xl shadow-lg">
                 {/* Logo & Title */}
@@ -39,8 +42,8 @@ export default function Navbar() {
                             end={to === "/"}
                             className={({ isActive }) =>
                                 ` text-sm px-2 py-1 transition-colors text-white ${isActive
-                                    ? "text-main underline underline-offset-4"
-                                    : "text-gray-800 hover:text-purple-800 hover:underline underline-offset-4"
+                                    ? "font-bold underline underline-offset-4"
+                                    : "text-gray-800 hover:text- hover:underline underline-offset-4"
                                 }`
                             }
                         >
@@ -49,7 +52,7 @@ export default function Navbar() {
                     ))}
                 </div>
 
-                <button onClick={toggleMenu} className="md:hidden text-3xl text-gray-700">
+                <button onClick={toggleMenu} className="md:hidden text-3xl text-white">
                     {isMenuOpen ? <HiX /> : <HiMenu />}
                 </button>
             </div>
@@ -93,8 +96,8 @@ export default function Navbar() {
                             onClick={closeMenu}
                             className={({ isActive }) =>
                                 ` font-medium transition-colors ${isActive
-                                    ? "text-main underline underline-offset-4"
-                                    : "text-gray-700 hover:text-purple-800"
+                                    ? "font-bold underline underline-offset-4"
+                                    : "text-gray-800 hover:text- hover:underline underline-offset-4"
                                 }`
                             }
                         >
@@ -104,6 +107,6 @@ export default function Navbar() {
                 </div>
             </div>
 
-        </>
+        </nav>
     );
 }
