@@ -20,7 +20,7 @@ export default function Navbar() {
     return (
         <nav>
             {/* Top Navbar */}
-            <div className="fixed top-0 left-0 w-full z-50 px-3 sm:px-4 md:px-6 lg:px-10 xl:px-12 py-3 md:py-4 flex justify-between items-center backdrop-blur-xs bg-black/50 rounded-b-2xl shadow-lg">
+            <div className="fixed top-0 left-0 w-full z-50 px-3 sm:px-4 md:px-6 lg:px-10 xl:px-12 py-3 md:py-4 flex justify-between items-center backdrop-blur-xs bg-black/50  shadow-lg">
                 {/* Logo & Title */}
 
                 <Link to={"/"}>
@@ -34,7 +34,7 @@ export default function Navbar() {
                     </div>
                 </Link>
 
-                <div className="hidden md:flex items-center gap-6 border px-4 py-2 rounded-md  shadow-l">
+                <div className="hidden md:flex items-center gap-6 border px-4 py-2  shadow-l">
                     {navLinks.map(({ to, label }) => (
                         <NavLink
                             key={to}

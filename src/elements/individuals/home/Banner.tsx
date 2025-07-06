@@ -20,10 +20,10 @@ export default function Banner() {
                 </h1>
 
                 <div className="mt-8 flex flex-wrap gap-4 justify-center">
-                    <button className="bg-[#ff5c00] hover:bg-[#e44e00] text-white font-semibold px-5 py-3 hover:scale-101 text-sm shadow-md transition">
+                    <button className="bg-[#ff5c00] hover:bg-[#e44e00] text-white font-semibold px-5 py-3 hover:scale-101 text-xs md:text-sm shadow-md transition">
                         Appointment →
                     </button>
-                    <button className="border border-white text-white font-semibold px-5 py-3  text-sm shadow-md hover:scale-101  transition">
+                    <button className="border border-white text-white font-semibold px-5 py-3  text-xs md:text-sm shadow-md hover:scale-101  transition">
                         Services →
                     </button>
                 </div>
