@@ -27,10 +27,10 @@ export default function Navbar() {
                     <div className="flex items-center gap-4">
                         <img
                             className="h-12 w-12 md:h-16 md:w-16 rounded-full object-cover"
-                            src="/logo.jpg"
+                            src="/logo.png"
                             alt="Logo"
                         />
-                        <h1 className="text-xl md:text-3xl font-bold text-white ">Hughes</h1>
+                        {/* <h1 className="text-xl md:text-3xl font-bold text-white ">Hughes</h1> */}
                     </div>
                 </Link>
 
@@ -74,10 +74,10 @@ export default function Navbar() {
                         <div className="flex items-center gap-3">
                             <img
                                 className="h-10 w-10 rounded-full object-cover"
-                                src="/logo.jpg"
+                                src="/logo.png"
                                 alt="Logo"
                             />
-                            <h2 className="text-xl font-bold ">Hughes</h2>
+                            {/* <h2 className="text-xl font-bold ">Hughes</h2> */}
                         </div>
                     </Link>
 
