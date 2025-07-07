@@ -54,13 +54,13 @@ export default function Services() {
       <div className="max-w-7xl mx-auto mb-16">
         <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8">
           <div className="max-w-2xl">
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">Our Core Services</h2>
-            <p className="text-lg text-gray-600 leading-relaxed">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl  font-bold mb-6">Our Core Services</h2>
+            <p className="text-xs md:text-sm text-gray-600 leading-relaxed">
               Hughes Contractors Pty Ltd offers a diverse range of expert services tailored to meet modern construction,
               demolition, and infrastructure needs.
             </p>
           </div>
-          <Button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 text-lg font-semibold self-start lg:self-auto">
+          <Button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 text-lg font-semibold self-start lg:self-auto rounded-none">
             Book Appointment
             <FaArrowRight className="ml-2 h-5 w-5" />
           </Button>
@@ -70,7 +70,7 @@ export default function Services() {
       {/* Background Image with Service Cards */}
       <div className="max-w-7xl mx-auto">
         <div
-          className="relative rounded-2xl overflow-hidden min-h-[600px] bg-cover bg-center bg-no-repeat"
+          className="relative  overflow-hidden min-h-[600px] bg-cover bg-center bg-no-repeat"
           style={{
             backgroundImage: "url('/services.jpg')",
           }}
@@ -83,19 +83,19 @@ export default function Services() {
             {services.map((service) => {
               const IconComponent = service.icon
               return (
-                <Card key={service.id} className="bg-white/95 backdrop-blur-sm border-0 shadow-xl">
-                  <CardContent className="p-6">
+                <Card key={service.id} className=" bg-black/40 backdrop-blur-sm border-0 shadow-xl rounded-none">
+                  <CardContent className="p-6 ">
                     {/* Icon and Number */}
                     <div className="flex items-start justify-between mb-4">
-                      <div className="bg-orange-500 p-3 rounded-lg">
+                      <div className="bg-orange-500 p-3 ">
                         <IconComponent className="h-6 w-6 text-white" />
                       </div>
                       <span className="text-6xl font-bold text-gray-200 leading-none">{service.id}</span>
                     </div>
 
                     {/* Content */}
-                    <h3 className="text-xl font-bold text-gray-900 mb-3">{service.title}</h3>
-                    <p className="text-gray-600 text-sm leading-relaxed mb-4">{service.description}</p>
+                    <h3 className="text-sm sm:text-lg  font-bold text-white mb-3">{service.title}</h3>
+                    <p className="text-white text-xs sm:text-sm  leading-relaxed mb-4">{service.description}</p>
 
                     {/* Read More Link */}
                     <button className="text-orange-500 font-semibold text-sm hover:text-orange-600 transition-colors flex items-center group">
