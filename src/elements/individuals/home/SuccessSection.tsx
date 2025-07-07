@@ -17,7 +17,7 @@ export default function SuccessSection() {
                 {/* Header */}
                 <div className="text-center mb-12">
                     <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 uppercase">
-                        Your Trusted Agent
+                        Your Trusted Construction Agent
                     </h2>
                     <p className=" max-w-3xl mx-auto text-sm sm:text-base lg:text-lg">
                         With over two decades of experience in residential and commercial construction, we take pride in transforming visions into durable, high-quality structures on time and on budget.
