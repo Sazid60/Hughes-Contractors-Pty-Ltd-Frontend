@@ -16,7 +16,7 @@ export default function Banner() {
                     Your Trusted Service Provider
                 </p>
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight max-w-4xl">
-                    FROM VISION TO VIDEO – WE BUILD STORIES
+                    FROM VISION TO VIDEO  WE BUILD STORIES
                 </h1>
 
                 <div className="mt-8 flex flex-wrap gap-4 justify-center">
