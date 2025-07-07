@@ -94,7 +94,7 @@ export default function Services() {
                     </div>
 
                     {/* Content */}
-                    <h3 className="text-sm sm:text-lg  font-bold text-white mb-3">{service.title}</h3>
+                    <h3 className="text-sm sm:text-lg  font-bold text-orange-500 mb-3">{service.title}</h3>
                     <p className="text-white text-xs sm:text-sm  leading-relaxed mb-4">{service.description}</p>
 
                     {/* Read More Link */}

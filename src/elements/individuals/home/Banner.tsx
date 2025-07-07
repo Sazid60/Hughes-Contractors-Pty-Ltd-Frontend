@@ -1,6 +1,6 @@
 export default function Banner() {
     return (
-        <section className="relative w-full h-[calc(100vh-2rem)] md:h-[calc(100vh-1rem)] overflow-hidden text-white">
+        <section className="relative w-full h-[calc(100vh)] md:h-[calc(100vh)] overflow-hidden text-white">
             <img
                 src="/Banner.jpg"
                 alt="Construction Banner"
