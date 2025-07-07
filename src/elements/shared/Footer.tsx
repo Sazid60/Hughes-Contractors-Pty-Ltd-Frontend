@@ -3,7 +3,7 @@
 export default function Footer() {
   return (
     <div>
-      Footer
+      Footer main
     </div>
   )
 }
