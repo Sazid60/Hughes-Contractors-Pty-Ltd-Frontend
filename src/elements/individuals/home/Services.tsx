@@ -54,7 +54,7 @@ export default function Services() {
       <div className="max-w-7xl mx-auto mb-16">
         <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8">
           <div className="max-w-2xl">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl  font-bold mb-6">Our Core Services</h2>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl  font-bold mb-6 uppercase">Our Core Services</h2>
             <p className="text-xs md:text-sm text-gray-600 leading-relaxed">
               Hughes Contractors Pty Ltd offers a diverse range of expert services tailored to meet modern construction,
               demolition, and infrastructure needs.
@@ -98,10 +98,10 @@ export default function Services() {
                     <p className="text-white text-xs sm:text-sm  leading-relaxed mb-4">{service.description}</p>
 
                     {/* Read More Link */}
-                    <button className="text-orange-500 font-semibold text-sm hover:text-orange-600 transition-colors flex items-center group">
+                    {/* <button className="text-orange-500 font-semibold text-sm hover:text-orange-600 transition-colors flex items-center group">
                       Read More
                       <FaArrowRight className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                    </button>
+                    </button> */}
                   </CardContent>
                 </Card>
               )
