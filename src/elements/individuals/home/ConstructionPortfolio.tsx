@@ -92,7 +92,7 @@ export default function ConstructionPortfolio() {
       </h2>
 
       {/* === Tab Content === */}
-      <p className="text-xs md:text-sm text-gray-600">
+      <p className="text-xs md:text-sm text-gray-700">
         {activeTab === "mission" ? (
           <>
             We build multi-family and affordable housing communities,
