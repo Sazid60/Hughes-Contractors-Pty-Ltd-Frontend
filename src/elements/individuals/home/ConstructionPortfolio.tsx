@@ -1,20 +1,22 @@
 import { useState } from "react";
 import constructionImage from "/construction-portfolio.webp";
 import constructionMan from "/image-5.png";
+import MainContainer from "@/layouts/MainContainer";
 
 export default function ConstructionPortfolio() {
     const [activeTab, setActiveTab] = useState<"mission" | "vision">("mission");
   return (
+    <MainContainer>
     <section className="bg-white py-12 px-4 md:px-10 lg:px-20">
    
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+      <div className="grid grid-cols-1 lg:grid-cols-2  gap-10 items-start">
         {/* === Left Image Section === */}
         <div className="w-full">
           <img
             src={constructionImage}
             alt="Construction Site"
-            className="w-full  lg:h-[550px]  rounded-lg shadow-md object-cover"
+            className="w-full  h-auto rounded-lg shadow-md object-cover"
           />
         </div>
 
@@ -23,7 +25,7 @@ export default function ConstructionPortfolio() {
           {/* === Project Overview === */}
           <div>
                {/* === Section Title === */}
-      <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-10 uppercase text-center text-gray-800">
+      <h1 className="text-3xl sm:text-4xl lg:text-4xl font-bold mb-10 uppercase text-center text-gray-800">
         Explore Our Construction Portfolio
       </h1>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800 mb-2">
@@ -115,5 +117,6 @@ export default function ConstructionPortfolio() {
         </div>
       </div>
     </section>
+    </MainContainer>
   );
 }
