@@ -117,9 +117,9 @@ export default function Services() {
                 const IconComponent = service.icon
                 return (
                   <Card key={service.id} className=" bg-black/40 backdrop-blur-sm border-0 shadow-xl rounded-none">
-                    <CardContent className="p-6 ">
+                    <CardContent className="p-2 ">
                       {/* Icon and Number */}
-                      <div className="flex items-start justify-between mb-4">
+                      <div className="flex items-start justify-between mb-4 mx-4">
                         <div className="bg-orange-500 p-3 ">
                           <IconComponent className="h-3 w-3 md:h-6 md:w-6 text-white" />
                         </div>
@@ -127,8 +127,8 @@ export default function Services() {
                       </div>
 
                       {/* Content */}
-                      <h3 className="text-sm sm:text-lg  font-bold text-orange-500 mb-3 text-center">{service.title}</h3>
-                      <p className="text-white text-xs sm:text-sm  leading-relaxed mb-4 min-h-[90px] md:min-h-[150px] text-center">{service.description}</p>
+                      <h3 className="text-sm sm:text-lg md:text-[25px]  font-bold text-orange-500 mb-3 text-center">{service.title}</h3>
+                      <p className="text-white text-xs sm:text-sm md:text-[19px] leading-relaxed mb-4 min-h-[100px] md:min-h-[180px] text-center">{service.description}</p>
 
                       {/* Read More Link */}
                       {/* <button className="text-orange-500 font-semibold text-sm hover:text-orange-600 transition-colors flex items-center group">
