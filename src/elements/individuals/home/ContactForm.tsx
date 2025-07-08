@@ -57,20 +57,20 @@ export default function ContactForm() {
             <div className="absolute inset-0 bg-black/70 z-0" />
 
             {/* Form content wrapper */}
-            <div className="relative z-10 max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-10 bg-black/60 backdrop-blur-md p-6 md:p-10 ">
+            <div className="relative z-10 max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-10 bg-black/50 backdrop-blur-xl p-6 md:p-10 ">
                 {/* Left Image */}
                 <div className="w-full lg:w-1/2  overflow-hidden">
                     <img
                         src="/meeting.jpg"
                         alt="Discussion"
-                        className="w-full h-full object-cover "
+                        className="w-full h-full object-cover opacity-80 "
                     />
                 </div>
 
                 {/* Right Form */}
                 <div className="w-full lg:w-1/2 text-white">
-                    <h2 className=" mb-8 text-xl sm:text-2xl lg:text-3xl font-bold">
-                        Would you like to discuss a project?
+                    <h2 className=" mb-8 text-center lg:text-left text-xl sm:text-2xl lg:text-3xl font-bold">
+                        Would You Like to Discuss A Project?
                     </h2>
 
                     <Form {...form}>

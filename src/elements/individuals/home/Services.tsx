@@ -72,7 +72,7 @@ export default function Services() {
   ]
   return (
     <MainContainer>
-      <section className="relative min-h-screen bg-gray-50 py-10 px-0 sm:px-6 lg:px-8">
+      <section className="relative min-h-screen py-10 px-0 sm:px-6 lg:px-8">
         {/* Header Section */}
         <div className="max-w-7xl mx-auto mb-6 md:mb-16">
           <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4 md:gap-8">
