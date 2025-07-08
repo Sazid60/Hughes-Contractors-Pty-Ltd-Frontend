@@ -8,7 +8,7 @@ export default function Services() {
       id: "01",
       title: "Civil Construction",
       description:
-        "We specialize in infrastructure and civil construction, including roads, drainage, earthworks, and structural concrete projects.",
+        "  Hi specialize in infrastructure and civil construction, including roads, drainage, earthworks, and structural concrete projects.",
       icon: FaHardHat,
     },
     {
