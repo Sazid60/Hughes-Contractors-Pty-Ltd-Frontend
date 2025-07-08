@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { FaArrowRight, FaHardHat, FaIndustry, FaTools, FaBuilding, FaSolarPanel, FaTruckMoving } from "react-icons/fa"
+import MainContainer from "@/layouts/MainContainer"
+import { FaArrowRight, FaHardHat, FaIndustry, FaTools, FaBuilding, FaSolarPanel, FaTruckMoving, FaBroom, FaShieldAlt, FaLeaf } from "react-icons/fa"
 
 export default function Services() {
   const services = [
@@ -8,128 +9,131 @@ export default function Services() {
       id: "01",
       title: "Civil Construction",
       description:
-        " Our civil construction services encompass all phases of infrastructure development, including bulk earthworks, excavation, storm water and drainage system installation, roadworks, and site preparation. We have extensive experience working on commercial, residential, and government projects where precision, safety, and adherence to strict timelines are critical. Utilizing advanced equipment and a skilled workforce, we ensure efficient project delivery while maintaining environmental and safety standards.",
+        "We handle all stages of civil construction from earthworks and drainage to roadworks and site prep. Our skilled team ensures efficient delivery, safety compliance, and quality outcomes for commercial, residential, and government projects.",
       icon: FaHardHat,
     },
     {
       id: "02",
       title: "Plant Decommission",
       description:
-        "We specialize in the controlled decommissioning of industrial plants and equipment, offering a turnkey service from initial planning through to dismantling, removal, and site rehabilitation. Our approach focuses on environmental risk management, compliance with all regulatory requirements, and minimizing disruption to ongoing operations. We work closely with clients to develop customized decommissioning plans that ensure safety and cost efficiency throughout the project lifecycle..",
+        "We offer end-to-end industrial plant decommissioning, including planning, dismantling, and site restoration. Our approach ensures safety, regulatory compliance, and minimal disruption to surrounding operations.",
       icon: FaIndustry,
     },
     {
       id: "03",
       title: "Demolition Consultant",
       description:
-        "Our demolition consulting team provides expert guidance to ensure projects are executed safely, efficiently, and in full compliance with local regulations and environmental standards. We assist with demolition methodology development, risk assessments, permit applications, and waste management planning. By integrating best practices and innovative solutions, we help clients mitigate risks, control costs, and reduce environmental impact during demolition activities.",
+        "We guide demolition projects with expert planning, risk assessments, permits, and waste management. Our consulting ensures safety, cost control, and full regulatory compliance from start to finish.",
       icon: FaTools,
     },
     {
       id: "04",
       title: "Building & Construction Demolition",
       description:
-        "We provide comprehensive support for building and construction projects, offering skilled labour, excavation services, and construction assistance from the early groundwork stages through to structural completion. Our team collaborates with builders and developers to deliver foundation works, earthmoving, and material handling with a focus on quality, safety, and timeliness. Whether for small renovations or large-scale developments, we tailor our approach to meet project requirements.",
+        "We support construction from excavation to structural work, offering skilled labor, equipment, and safety-focused operations for both small renovations and large-scale developments.",
       icon: FaBuilding,
     },
     {
       id: "05",
       title: "Early Work Constructing",
       description:
-        "Our early works contracting services provide the essential groundwork to prepare sites for main construction activities. This includes vegetation clearing, site levelling, temporary access roads, utility location and coordination, and initial excavation. By managing these early stages effectively, we help streamline project delivery and minimize downstream risks and delays.",
+        "We manage pre-construction activities such as site clearing, leveling, access roads, and utility coordination to ensure smooth and risk-free project execution from the ground up.",
       icon: FaTruckMoving,
     },
     {
       id: "06",
       title: "Renewable Energy",
       description:
-        "As the renewable energy sector grows, we are proud to support wind, solar, and battery storage projects with specialist civil works, infrastructure preparation, and site services. Our expertise includes earthworks, trenching for electrical conduits, access road construction, and environmental management to facilitate smooth project progression. We understand the unique challenges of renewable projects and work to minimize environmental impact while meeting tight schedules.",
+        "We support solar, wind, and battery projects with civil works, road access, trenching, and environmental management ensuring sustainable, compliant, and timely energy infrastructure delivery.",
       icon: FaSolarPanel,
     },
     {
       id: "07",
       title: "Decontamination Services",
       description:
-        "Our certified decontamination team specializes in the safe removal and disposal of hazardous materials such as asbestos, lead, and other environmental contaminants. We operate under strict NSW regulations and industry best practices to protect workers, the public, and the environment. Our services include site assessments, abatement planning, controlled removal, and post-clearance testing, ensuring complete site safety and compliance.",
-      icon: FaSolarPanel,
+        "Our licensed team removes hazardous materials like asbestos and lead under strict guidelines. We provide site assessment, safe removal, and post-clearance testing for total compliance.",
+      icon: FaBroom, // New icon: Represents gear & handling
     },
     {
       id: "08",
       title: "Environment & Government Projects",
       description:
-        "We partner with local councils, state government bodies, and environmental agencies to deliver critical infrastructure and remediation projects that meet stringent regulatory, ecological, and heritage requirements. Our work includes storm water management systems, park upgrades, site remediation, and heritage conservation. We prioritize compliance, sustainability, and community impact in every project.",
-      icon: FaSolarPanel,
+        "We work with councils and agencies on eco-sensitive projects like stormwater systems, park upgrades, and heritage preservation, ensuring sustainability and regulatory compliance.",
+      icon: FaLeaf, // New icon: Represents eco/environmental efforts
     },
     {
       id: "09",
       title: "Defense Constructions",
       description:
-        "We deliver secure, compliant services to Australia’s Defense sector, including excavation, civil works, internal strip-outs, and licensed hazardous material removal. With experience working in high-security environments such as naval bases and government facilities, we operate with strict adherence to Defense protocols, WHS standards, and environmental regulations. Our team ensures every project is handled with discretion, safety, and precision.",
-      icon: FaSolarPanel,
+        "We provide secure services for Defense sites, including excavation, civil works, and hazardous material removal delivering with full compliance to safety and Defense protocols.",
+      icon: FaShieldAlt, // New icon: Represents defense/protection
     },
+
   ]
-
   return (
-    <section className="relative min-h-screen bg-gray-50 py-16 px-4 sm:px-6 lg:px-8">
-      {/* Header Section */}
-      <div className="max-w-7xl mx-auto mb-16">
-        <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8">
-          <div className="max-w-2xl">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl  font-bold mb-6 uppercase">Our Core Services</h2>
-            <p className="text-xs md:text-sm text-gray-600 leading-relaxed">
-              Hughes Contractors Pty Ltd offers a diverse range of expert services tailored to meet modern construction,
-              demolition, and infrastructure needs.
-            </p>
+    <MainContainer>
+      <section className="relative min-h-screen bg-gray-50 py-10 px-0 sm:px-6 lg:px-8">
+        {/* Header Section */}
+        <div className="max-w-7xl mx-auto mb-6 md:mb-16">
+          <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4 md:gap-8">
+            <div className="max-w-2xl">
+              <h2 className="text-xl sm:text-4xl lg:text-5xl  font-bold mb-3 md:mb-6 uppercase">Our Core Services</h2>
+              <p className="text-xs md:text-sm text-gray-600 leading-relaxed">
+                Hughes Contractors Pty Ltd offers a diverse range of expert services tailored to meet modern construction,
+                demolition, and infrastructure needs.
+              </p>
+            </div>
+            <Button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 text-xs md:text-sm font-semibold self-start lg:self-auto rounded-none">
+              Book Appointment
+              <FaArrowRight className="ml-2 h-5 w-5" />
+            </Button>
           </div>
-          <Button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 text-lg font-semibold self-start lg:self-auto rounded-none">
-            Book Appointment
-            <FaArrowRight className="ml-2 h-5 w-5" />
-          </Button>
         </div>
-      </div>
 
-      {/* Background Image with Service Cards */}
-      <div className="max-w-7xl mx-auto">
-        <div
-          className="relative  overflow-hidden min-h-[600px] bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: "url('/services.jpg')",
-          }}
-        >
-          {/* Overlay */}
-          <div className="absolute inset-0 bg-black/40" />
+        {/* Background Image with Service Cards */}
+        <div className="max-w-7xl mx-auto">
+          <div
+            className="relative  overflow-hidden min-h-[600px] bg-cover bg-center bg-no-repeat"
+            style={{
+              backgroundImage: "url('/services.jpg')",
+            }}
+          >
+            {/* Overlay */}
+            <div className="absolute inset-0 bg-black/40" />
 
-          {/* Service Cards */}
-          <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-8 lg:p-12 h-full items-end">
-            {services.map((service) => {
-              const IconComponent = service.icon
-              return (
-                <Card key={service.id} className=" bg-black/40 backdrop-blur-sm border-0 shadow-xl rounded-none">
-                  <CardContent className="p-6 ">
-                    {/* Icon and Number */}
-                    <div className="flex items-start justify-between mb-4">
-                      <div className="bg-orange-500 p-3 ">
-                        <IconComponent className="h-6 w-6 text-white" />
+            {/* Service Cards */}
+            <div className="relative z-10 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-6 p-2 md:p-8 lg:p-12 h-full items-end">
+              {services.map((service) => {
+                const IconComponent = service.icon
+                return (
+                  <Card key={service.id} className=" bg-black/40 backdrop-blur-sm border-0 shadow-xl rounded-none">
+                    <CardContent className="p-6 ">
+                      {/* Icon and Number */}
+                      <div className="flex items-start justify-between mb-4">
+                        <div className="bg-orange-500 p-3 ">
+                          <IconComponent className="h-3 w-3 md:h-6 md:w-6 text-white" />
+                        </div>
+                        <span className="text-3xl md:text-6xl font-bold text-gray-200 leading-none">{service.id}</span>
                       </div>
-                      <span className="text-6xl font-bold text-gray-200 leading-none">{service.id}</span>
-                    </div>
 
-                    {/* Content */}
-                    <h3 className="text-sm sm:text-lg  font-bold text-orange-500 mb-3">{service.title}</h3>
-                    <p className="text-white text-xs sm:text-sm  leading-relaxed mb-4">{service.description}</p>
+                      {/* Content */}
+                      <h3 className="text-sm sm:text-lg  font-bold text-orange-500 mb-3 text-center">{service.title}</h3>
+                      <p className="text-white text-xs sm:text-sm  leading-relaxed mb-4 min-h-[90px] md:min-h-[150px] text-center">{service.description}</p>
 
-                    {/* Read More Link */}
-                    {/* <button className="text-orange-500 font-semibold text-sm hover:text-orange-600 transition-colors flex items-center group">
+                      {/* Read More Link */}
+                      {/* <button className="text-orange-500 font-semibold text-sm hover:text-orange-600 transition-colors flex items-center group">
                       Read More
                       <FaArrowRight className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                     </button> */}
-                  </CardContent>
-                </Card>
-              )
-            })}
+                    </CardContent>
+                  </Card>
+                )
+              })}
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </MainContainer>
+
   )
 }
