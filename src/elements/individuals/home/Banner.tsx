@@ -1,3 +1,7 @@
+import { Button } from "@/components/ui/button";
+import { Dialog, DialogTrigger } from "@/components/ui/dialog";
+import AppointmentModal from "@/elements/modals/AppointmentModal";
+
 export default function Banner() {
     return (
         <section className="relative w-full h-[calc(100vh)] md:h-[calc(100vh)] overflow-hidden text-white">
@@ -20,12 +24,20 @@ export default function Banner() {
                 </h1>
 
                 <div className="mt-8 flex flex-wrap gap-4 justify-center">
-                    <button className="bg-[#ff5c00] hover:bg-[#e44e00] text-white font-semibold px-5 py-3 hover:scale-101 text-xs md:text-sm shadow-md transition">
+                    {/* <button className="bg-[#ff5c00] hover:bg-[#e44e00] text-white font-semibold px-5 py-3 hover:scale-101 text-xs md:text-sm shadow-md transition">
                         Appointment →
-                    </button>
-                    <button className="border border-white text-white font-semibold px-5 py-3  text-xs md:text-sm shadow-md hover:scale-101  transition">
-                        Services →
-                    </button>
+                    </button> */}
+                    <Dialog>
+                        <DialogTrigger asChild>
+                            <Button className="bg-[#ff5c00] hover:bg-[#e44e00] text-white font-semibold px-5 py-3 hover:scale-101 text-xs md:text-sm shadow-md transition rounded-none">
+                                Appointment →
+                            </Button>
+                        </DialogTrigger>
+                        <AppointmentModal />
+                    </Dialog>
+                    <Button className="border bg-transparent hover:bg-transparent border-white text-white font-semibold px-5 py-3  text-xs md:text-sm shadow-md hover:scale-101  transition rounded-none">
+                        Projects →
+                    </Button>
                 </div>
             </div>
         </section>

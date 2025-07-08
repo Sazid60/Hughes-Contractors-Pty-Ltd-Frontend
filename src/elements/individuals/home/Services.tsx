@@ -1,7 +1,9 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
+import { Dialog, DialogTrigger } from "@/components/ui/dialog"
+import AppointmentModal from "@/elements/modals/AppointmentModal"
 import MainContainer from "@/layouts/MainContainer"
-import { FaArrowRight, FaHardHat, FaIndustry, FaTools, FaBuilding, FaSolarPanel, FaTruckMoving, FaBroom, FaShieldAlt, FaLeaf } from "react-icons/fa"
+import { FaHardHat, FaIndustry, FaTools, FaBuilding, FaSolarPanel, FaTruckMoving, FaBroom, FaShieldAlt, FaLeaf } from "react-icons/fa"
 
 export default function Services() {
   const services = [
@@ -83,10 +85,18 @@ export default function Services() {
                 demolition, and infrastructure needs.
               </p>
             </div>
-            <Button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 text-xs md:text-sm font-semibold self-start lg:self-auto rounded-none">
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 text-xs md:text-sm font-semibold self-start lg:self-auto rounded-none">
+                  Book Appointment →
+                </Button>
+              </DialogTrigger>
+              <AppointmentModal />
+            </Dialog>
+            {/* <Button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 text-xs md:text-sm font-semibold self-start lg:self-auto rounded-none">
               Book Appointment
               <FaArrowRight className="ml-2 h-5 w-5" />
-            </Button>
+            </Button> */}
           </div>
         </div>
 
