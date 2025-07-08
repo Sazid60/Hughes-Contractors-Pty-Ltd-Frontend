@@ -5,10 +5,16 @@ import { RouterProvider } from 'react-router'
 
 
 import router from './routes'
+import { Provider } from 'react-redux'
+import { store } from './redux/store'
+import { Toaster } from './components/ui/sonner'
 
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <Provider store={store}>
+      <RouterProvider router={router} />
+      <Toaster richColors />
+    </Provider>
   </StrictMode>
 )
