@@ -6,9 +6,23 @@ import MissionVision from "@/pages/MissionVision";
 import WhatWeDo from "@/pages/WhatWeDo";
 import Projects from "@/pages/Projects";
 import OurEquipments from "@/pages/OurEquipments";
+import AdminDashboardLayout from "@/pages/admin/AdminDashboardLayout";
+import AdminHome from "@/pages/admin/AdminHome";
+import ManageProjects from "@/pages/admin/ManageProjects";
+import ManageEquipments from "@/pages/admin/AdminEquipments";
+
 
 
 const router = createBrowserRouter([
+    {
+        path: "/admin",
+        Component: AdminDashboardLayout,
+        children: [
+            { index: true, Component: AdminHome },
+            { path: "projects", Component: ManageProjects },
+            { path: "equipments", Component: ManageEquipments },
+        ],
+    },
     {
         path: "/",
         Component: MainLayout,
@@ -19,19 +33,19 @@ const router = createBrowserRouter([
                 Component: HomePage,
             },
             {
-                path:"mission-vision",
+                path: "mission-vision",
                 Component: MissionVision,
             },
             {
-                path:"what-we-do",
-                Component:WhatWeDo,
+                path: "what-we-do",
+                Component: WhatWeDo,
             },
             {
-                path:"projects",
+                path: "projects",
                 Component: Projects,
             },
             {
-                path:"equipments",
+                path: "equipments",
                 Component: OurEquipments,
             },
         ],
