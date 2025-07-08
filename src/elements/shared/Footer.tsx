@@ -51,8 +51,23 @@ export default function Footer() {
             <Facebook className="hover:text-white cursor-pointer" />
             <Linkedin className="hover:text-white cursor-pointer" />
             <Instagram className="hover:text-white cursor-pointer" />
-            {/* WhatsApp Icon with link */}
-            <a
+           
+          </div>
+        </div>
+
+        {/* === Legal === */}
+        <div>
+         <h1 className="font-semibold text-orange-500 pt-2">
+              Civil & Demolition Contractors
+            </h1>
+            <p>Leo Hughes</p>
+            <div className="flex items-center gap-2">
+              <Phone size={16} className="text-blue-400" />
+              <span>+61 419 408 349</span>
+            </div>
+           <div className="flex gap-2 pt-2">
+              {/* WhatsApp Icon with link */}
+               <a
               href="https://wa.me/61419408349"
               target="_blank"
               rel="noopener noreferrer"
@@ -61,21 +76,9 @@ export default function Footer() {
             >
               <WhatsAppIcon size={20} />
             </a>
-          </div>
-        </div>
-
-        {/* === Legal === */}
-        <div className="text-center">
-          <h2 className="text-xl font-bold text-orange-500 mb-4">Legal</h2>
-          <p className="text-sm text-gray-400 hover:text-white cursor-pointer">
-            Terms of Use
-          </p>
-          <p className="text-sm text-gray-400 hover:text-white cursor-pointer">
-            Privacy Policy
-          </p>
-          <p className="text-sm text-gray-400 hover:text-white cursor-pointer">
-            Cookie Policy
-          </p>
+             <p>Whatsapp</p>
+           
+           </div>
         </div>
 
         {/* === Quick Links === */}
@@ -120,14 +123,7 @@ export default function Footer() {
               <Phone size={16} className="text-blue-400" />
               <span>02 8384 9867</span>
             </div>
-            <p className="font-semibold text-white pt-2">
-              Civil & Demolition Contractors
-            </p>
-            <p>Leo Hughes</p>
-            <div className="flex items-center gap-2">
-              <Phone size={16} className="text-blue-400" />
-              <span>+61 419 408 349</span>
-            </div>
+          
           </div>
         </div>
       </div>
