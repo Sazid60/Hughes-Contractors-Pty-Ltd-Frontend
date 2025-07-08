@@ -16,6 +16,9 @@ export default function Banner() {
 
             {/* Content */}
             <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
+                <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold leading-tight max-w-4xl mb-4 text-[#ff5c00]">
+                    HUGHES CONTRACTORS PTY LTD
+                </h1>
                 <p className="text-sm md:text-base uppercase tracking-widest text-gray-300 mb-4">
                     Your Trusted Service Provider
                 </p>

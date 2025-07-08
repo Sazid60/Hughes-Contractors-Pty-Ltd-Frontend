@@ -1,8 +1,11 @@
+import SecondaryContainer from "@/layouts/SecondaryContainer";
 
 export default function Projects() {
   return (
-    <div>
-      Projects
-    </div>
+    <SecondaryContainer>
+      <div>
+        Projects
+      </div>
+    </SecondaryContainer>
   )
 }
