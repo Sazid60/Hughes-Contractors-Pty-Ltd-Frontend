@@ -1,9 +1,7 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { useEffect } from "react";
-import {
-    useForm,
-    type SubmitHandler,
-} from "react-hook-form";
+import { useForm, type SubmitHandler } from "react-hook-form";
 import { Button } from "@/components/ui/button";
 import {
     DialogClose,
@@ -23,41 +21,42 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { useAddProjectMutation } from "@/redux/api/projectApi";
-import { toast } from "sonner";
 
-// Read from environment
+import { useUpdateProjectMutation } from "@/redux/api/projectApi";
+import { toast } from "sonner";
+import type { IProjectProp, ProjectFormValues } from "@/types/types";
+
 const IMGBB_API_KEY = import.meta.env.VITE_IMGBB_API_KEY;
 
-// Form values interface
-interface ProjectFormValues {
-    projectImageFile: FileList | null;
-    title: string;
-    client: string;
-    location: string;
-    projectYear: string;
-    duration: string;
-    description: string;
-}
-
-export default function AddProjectModal() {
+export default function ProjectUpdateModal({ project }: IProjectProp) {
     const form = useForm<ProjectFormValues>({
         mode: "onChange",
         defaultValues: {
             projectImageFile: null,
-            title: "",
-            client: "",
-            location: "",
-            projectYear: "",
-            duration: "",
-            description: "",
+            title: project.title,
+            client: project.client,
+            location: project.location,
+            projectYear: project.projectYear,
+            duration: project.duration,
+            description: project.description,
         },
     });
 
+    const { watch } = form;
     const isValid = form.formState.isValid;
-    const [addProject, { isLoading, isError, error, data }] = useAddProjectMutation();
+    const watchedValues = watch();
 
-    // Upload image to imgbb
+    const hasChanged = Object.entries(watchedValues).some(([key, value]) => {
+        if (key === "projectImageFile") {
+            return value && value.length > 0;
+        }
+        return value !== (project as any)[key];
+    });
+
+    const [updateProject, { isLoading, isError, error }] =
+        useUpdateProjectMutation();
+
+    // Image upload
     async function uploadImage(file: File): Promise<string> {
         const formData = new FormData();
         formData.append("image", file);
@@ -76,52 +75,57 @@ export default function AddProjectModal() {
     }
 
     useEffect(() => {
-        if (isError && error) toast.error("Failed to add project");
-        if (data) {
-            toast.success("Project added successfully");
-            form.reset();
-        }
-    }, [isError, error, data, form]);
+        if (isError && error) toast.error("Failed to update project");
+    }, [isError, error]);
 
     const onSubmit: SubmitHandler<ProjectFormValues> = async (data) => {
         try {
-            let imageUrl = "";
+            let imageUrl = project.projectImage;
 
             if (data.projectImageFile && data.projectImageFile.length > 0) {
                 imageUrl = await uploadImage(data.projectImageFile[0]);
             }
 
-            const { projectImageFile, ...rest } = data;
-            const projectPayload = {
-                ...rest,
+            const updatedPayload = {
+                title: data.title,
+                client: data.client,
+                location: data.location,
+                projectYear: data.projectYear,
+                duration: data.duration,
+                description: data.description,
                 projectImage: imageUrl,
             };
 
-            await addProject(projectPayload).unwrap();
-        } catch {
-            toast.error("Failed to upload image or add project");
+            const res = await updateProject({
+                id: project._id,
+                ...updatedPayload,
+            }).unwrap();
+
+            toast.success(res.message || "Project updated successfully");
+        } catch (err) {
+            toast.error("Failed to update project");
         }
     };
 
     return (
         <DialogContent className="sm:max-w-[600px]">
             <DialogHeader>
-                <DialogTitle className="text-center">Add Project</DialogTitle>
+                <DialogTitle className="text-center">Update Project</DialogTitle>
                 <DialogDescription className="text-center">
-                    Fill out the form to add a new project.
+                    Modify and save changes to the selected project.
                 </DialogDescription>
             </DialogHeader>
 
             <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-3">
                     {/* Image Upload */}
                     <FormField
                         control={form.control}
                         name="projectImageFile"
-                        rules={{ required: "Project image is required" }}
                         render={({ field }) => (
                             <FormItem>
                                 <FormLabel>Project Image</FormLabel>
+                                {/* Preview old image */}
                                 <FormControl>
                                     <Input
                                         type="file"
@@ -144,7 +148,7 @@ export default function AddProjectModal() {
                             <FormItem>
                                 <FormLabel>Title</FormLabel>
                                 <FormControl>
-                                    <Input className="rounded-none" placeholder="Enter Title" {...field} />
+                                    <Input placeholder="Enter Title" {...field} />
                                 </FormControl>
                                 <FormMessage />
                             </FormItem>
@@ -160,7 +164,7 @@ export default function AddProjectModal() {
                             <FormItem>
                                 <FormLabel>Client</FormLabel>
                                 <FormControl>
-                                    <Input className="rounded-none" placeholder="Enter Client Name" {...field} />
+                                    <Input placeholder="Enter Client Name" {...field} />
                                 </FormControl>
                                 <FormMessage />
                             </FormItem>
@@ -176,7 +180,7 @@ export default function AddProjectModal() {
                             <FormItem>
                                 <FormLabel>Location</FormLabel>
                                 <FormControl>
-                                    <Input className="rounded-none" placeholder="Enter Location" {...field} />
+                                    <Input placeholder="Enter Location" {...field} />
                                 </FormControl>
                                 <FormMessage />
                             </FormItem>
@@ -187,12 +191,12 @@ export default function AddProjectModal() {
                     <FormField
                         control={form.control}
                         name="projectYear"
-                        rules={{ required: "Project Year is required" }}
+                        rules={{ required: "Project year is required" }}
                         render={({ field }) => (
                             <FormItem>
                                 <FormLabel>Project Year</FormLabel>
                                 <FormControl>
-                                    <Input className="rounded-none" placeholder="Enter Project Year (e.g. 2023)" {...field} />
+                                    <Input placeholder="Enter Year" {...field} />
                                 </FormControl>
                                 <FormMessage />
                             </FormItem>
@@ -208,7 +212,7 @@ export default function AddProjectModal() {
                             <FormItem>
                                 <FormLabel>Duration</FormLabel>
                                 <FormControl>
-                                    <Input className="rounded-none" placeholder="Enter Duration (e.g. 10 months)" {...field} />
+                                    <Input placeholder="Enter Duration" {...field} />
                                 </FormControl>
                                 <FormMessage />
                             </FormItem>
@@ -224,7 +228,7 @@ export default function AddProjectModal() {
                             <FormItem>
                                 <FormLabel>Description</FormLabel>
                                 <FormControl>
-                                    <Textarea className="rounded-none" placeholder="Enter Project Description" {...field} />
+                                    <Textarea placeholder="Enter Description" {...field} />
                                 </FormControl>
                                 <FormMessage />
                             </FormItem>
@@ -235,22 +239,20 @@ export default function AddProjectModal() {
                     <DialogFooter className="mt-2 flex justify-between">
                         <DialogClose asChild>
                             <Button
-                                className="rounded-none"
-                                variant="outline"
                                 type="button"
-                                disabled={!isValid}
+                                variant="outline"
+                                className="rounded-none"
                             >
                                 Cancel
                             </Button>
                         </DialogClose>
-
-                        <DialogClose asChild disabled={!isValid || isLoading}>
+                        <DialogClose asChild disabled={!isValid || !hasChanged || isLoading}>
                             <Button
                                 type="submit"
-                                disabled={!isValid || isLoading}
-                                className="bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-none"
+                                className="bg-orange-500 hover:bg-orange-600 text-white rounded-none"
+                                disabled={!isValid || !hasChanged || isLoading}
                             >
-                                {isLoading ? "Adding..." : "Add Project"}
+                                {isLoading ? "Updating..." : "Update Project"}
                             </Button>
                         </DialogClose>
                     </DialogFooter>
