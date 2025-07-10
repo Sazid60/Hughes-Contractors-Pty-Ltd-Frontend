@@ -55,7 +55,7 @@ export default function AppointmentModal() {
     };
 
     return (
-        <DialogContent className="bg-black/70 backdrop-blur-xs border border-gray-700 p-6 md:p-8 sm:max-w-[600px] rounded-md text-white">
+        <DialogContent className="bg-black/70 backdrop-blur-xs border border-gray-700 p-6 md:p-8 sm:max-w-[600px] rounded-none text-white">
             <DialogHeader>
                 <DialogTitle className="text-lg md:text-xl mb-4 text-white mt-4">
                     Would You Like to Discuss A Project?

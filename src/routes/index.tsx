@@ -7,7 +7,7 @@ import Projects from "@/pages/Projects";
 import AdminDashboardLayout from "@/pages/admin/AdminDashboardLayout";
 import AdminHome from "@/pages/admin/AdminHome";
 import ManageProjects from "@/pages/admin/ManageProjects";
-import ManageEquipments from "@/pages/admin/AdminEquipments";
+import ManageEquipments from "@/pages/admin/ManageEquipments";
 import OurPricing from "@/pages/OurPricing";
 
 
