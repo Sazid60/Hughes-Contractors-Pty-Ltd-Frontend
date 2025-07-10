@@ -12,7 +12,7 @@ interface ProjectCardProps {
 
 export default function ProjectManageCard({ project }: ProjectCardProps) {
     return (
-        <div className="relative bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col h-full overflow-hidden">
+        <div className="relative bg-white rounded-sm shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col h-full">
             {/* Action Buttons */}
             <div className="absolute top-3 right-3 flex gap-2 z-10">
                 <div>
@@ -48,7 +48,7 @@ export default function ProjectManageCard({ project }: ProjectCardProps) {
             <img
                 src={project.projectImage}
                 alt={project.title}
-                className="w-full h-48 object-cover rounded-t-xl border-b border-gray-200"
+                className="w-full h-48 object-cover rounded-t-sm border-b border-gray-200"
             />
 
             {/* Content */}
@@ -66,7 +66,9 @@ export default function ProjectManageCard({ project }: ProjectCardProps) {
 
                 {/* Year and Duration */}
                 <p className="text-sm  mb-3">
-                    <span className="font-semibold">Delivered : </span> {project.projectYear} • {project.duration}
+                    <span className="font-semibold">Delivered : </span> {project.projectYear}  <span className="text-orange-600">
+                        • {project.duration}
+                    </span>
                 </p>
 
                 {/* Description */}

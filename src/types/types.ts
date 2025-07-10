@@ -23,3 +23,20 @@ export interface ProjectFormValues {
     duration: string;
     description: string;
 }
+
+
+export interface ILabour {
+    _id: string;
+    jobType: string;
+    perHourRate: number;
+    minHour: number;
+}
+
+export interface IEquipment {
+    _id: string;
+    name: string;
+    equipmentImage: string;
+    hourlyRate: number;
+    minHour: number;
+    floatCharge: number;
+}

@@ -26,7 +26,7 @@ export default function ManageProjects() {
     return (
         <div className="w-full md:mt-15 lg:mt-0">
             {/* Banner Section */}
-            <div className="w-full h-[50vh] sm:h-[50vh] md:h-[40vh] xl:h-[70vh] bg-[url('/Banner.jpg')] bg-fixed bg-center bg-cover flex items-center justify-center rounded-xl overflow-hidden mb-10">
+            <div className="w-full h-[50vh] sm:h-[50vh] md:h-[40vh] xl:h-[40vh] bg-[url('/Banner.jpg')] bg-fixed bg-center bg-cover flex items-center justify-center rounded-sm overflow-hidden mb-10">
                 <div className="flex flex-col justify-center items-center text-center text-white px-4 z-10 max-w-2xl">
                     <h2 className="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2">
                         Manage Your Construction Projects
