@@ -1,5 +1,5 @@
 import { useState } from "react";
-import MainContainer from "@/layouts/MainContainer";
+import MainContainer from "@/layouts/containers/MainContainer";
 
 export default function ConstructionPortfolio() {
   const [activeTab, setActiveTab] = useState<"mission" | "vision">("mission");

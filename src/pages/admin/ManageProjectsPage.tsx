@@ -1,12 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogTrigger } from "@/components/ui/dialog";
-import AddProjectModal from "@/elements/individuals/admin/AddProjectModal";
-import ProjectManageCard from "@/elements/individuals/admin/ProjectManageCard";
+import ProjectManageCard from "@/elements/cards/ProjectManageCard";
+import AddProjectModal from "@/elements/modals/AddProjectModal";
 import { useGetProjectsQuery } from "@/redux/api/projectApi";
 import type { IProject } from "@/types/types";
 import { BounceLoader } from "react-spinners";
 
-export default function ManageProjects() {
+export default function ManageProjectsPage() {
     const { data, isLoading, isError } = useGetProjectsQuery(undefined, {
         pollingInterval: 3000,
         refetchOnFocus: true,
@@ -47,7 +47,7 @@ export default function ManageProjects() {
 
             {/* Section Heading */}
             <div className="text-center mb-10 px-4">
-                <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2">All Projects</h2>
+                <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2 uppercase">All Projects</h2>
                 <p className="text-sm sm:text-base md:text-lg text-gray-600">
                     Below is the list of projects you have added.
                 </p>

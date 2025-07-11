@@ -2,8 +2,8 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Dialog, DialogTrigger } from "@/components/ui/dialog"
 import AppointmentModal from "@/elements/modals/AppointmentModal"
-import MainContainer from "@/layouts/MainContainer"
-import { FaHardHat, FaIndustry, FaTools, FaBuilding, FaSolarPanel, FaTruckMoving, FaBroom, FaShieldAlt, FaLeaf } from "react-icons/fa"
+import MainContainer from "@/layouts/containers/MainContainer"
+import { FaHardHat, FaIndustry, FaTools, FaBuilding, FaSolarPanel, FaTruckMoving, FaBroom, FaLeaf } from "react-icons/fa"
 
 export default function Services() {
   const services = [
@@ -63,13 +63,13 @@ export default function Services() {
         "We work with councils and agencies on eco-sensitive projects like stormwater systems, park upgrades, and heritage preservation, ensuring sustainability and regulatory compliance.",
       icon: FaLeaf, // New icon: Represents eco/environmental efforts
     },
-    {
-      id: "09",
-      title: "Defense Constructions",
-      description:
-        "We provide secure services for Defense sites, including excavation, civil works, and hazardous material removal delivering with full compliance to safety and Defense protocols.",
-      icon: FaShieldAlt, // New icon: Represents defense/protection
-    },
+    // {
+    //   id: "09",
+    //   title: "Defense Constructions",
+    //   description:
+    //     "We provide secure services for Defense sites, including excavation, civil works, and hazardous material removal delivering with full compliance to safety and Defense protocols.",
+    //   icon: FaShieldAlt, // New icon: Represents defense/protection
+    // },
 
   ]
   return (
@@ -112,7 +112,7 @@ export default function Services() {
             <div className="absolute inset-0 bg-black/40" />
 
             {/* Service Cards */}
-            <div className="relative z-10 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-6 p-2 md:p-8 lg:p-12 h-full items-end">
+            <div className="relative z-10 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-6 p-2 md:p-8 lg:p-12 h-full items-end">
               {services.map((service) => {
                 const IconComponent = service.icon
                 return (

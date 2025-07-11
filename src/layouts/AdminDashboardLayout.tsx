@@ -110,7 +110,7 @@ export default function AdminDashboardLayout() {
             </div>
 
             {/* Main Content */}
-            <main className="flex justify-center items-center w-full p-4 pt-20 md:pt-4">
+            <main className="flex justify-center items-center w-full p-4 pt-20 sm:pt-20 md:pt-4">
                 <Outlet />
             </main>
         </div>

@@ -4,11 +4,12 @@ import HomePage from "@/pages/HomePage";
 import ErrorPage from "@/pages/ErrorPage";
 import Projects from "@/pages/Projects";
 
-import AdminDashboardLayout from "@/pages/admin/AdminDashboardLayout";
-import AdminHome from "@/pages/admin/AdminHome";
-import ManageProjects from "@/pages/admin/ManageProjects";
-import ManageEquipments from "@/pages/admin/ManageEquipments";
+import AdminDashboardLayout from "@/layouts/AdminDashboardLayout";
+import AdminHome from "@/pages/admin/AdminHomePage";
+
 import OurPricing from "@/pages/OurPricing";
+import ManageProjectsPage from "@/pages/admin/ManageProjectsPage";
+import ManageEquipmentsPage from "@/pages/admin/ManageEquipmentsPage";
 
 
 
@@ -18,8 +19,8 @@ const router = createBrowserRouter([
         Component: AdminDashboardLayout,
         children: [
             { index: true, Component: AdminHome },
-            { path: "projects", Component: ManageProjects },
-            { path: "equipments", Component: ManageEquipments },
+            { path: "projects", Component: ManageProjectsPage },
+            { path: "equipments", Component: ManageEquipmentsPage },
         ],
     },
     {
