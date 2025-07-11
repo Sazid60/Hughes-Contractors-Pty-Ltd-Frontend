@@ -2,6 +2,8 @@ import { Dialog, DialogTrigger } from "@/components/ui/dialog";
 import { FiTrash2 } from "react-icons/fi";
 import { FaEdit } from "react-icons/fa";
 import type { IEquipment } from "@/types/types";
+import EquipmentUpdateModal from "../modals/EquipmentUpdateModal";
+import EquipmentDeleteModal from "../modals/DeleteEquipmentModal";
 
 
 interface EquipmentCardProps {
@@ -23,7 +25,7 @@ export default function EquipmentCard({ equipment }: EquipmentCardProps) {
                             <FaEdit className="text-white h-4 w-4" />
                         </button>
                     </DialogTrigger>
-                    {/* <EquipmentUpdateModal equipment={equipment} /> */}
+                    <EquipmentUpdateModal equipment={equipment} />
                 </Dialog>
 
                 {/* Delete Button */}
@@ -36,7 +38,7 @@ export default function EquipmentCard({ equipment }: EquipmentCardProps) {
                             <FiTrash2 className="text-white h-4 w-4" />
                         </button>
                     </DialogTrigger>
-                    {/* <DeleteEquipmentModal equipmentId={equipment._id!} /> */}
+                    <EquipmentDeleteModal equipmentId={equipment._id!} />
                 </Dialog>
             </div>
 

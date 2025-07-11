@@ -1,4 +1,4 @@
-import SecondaryContainer from "@/layouts/SecondaryContainer";
+import SecondaryContainer from "@/layouts/containers/SecondaryContainer";
 
 
 export default function OurPricing() {

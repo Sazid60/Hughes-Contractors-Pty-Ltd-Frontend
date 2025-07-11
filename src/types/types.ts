@@ -40,3 +40,9 @@ export interface IEquipment {
     minHour: number;
     floatCharge: number;
 }
+
+export interface LabourFormValues {
+    jobType: string;
+    perHourRate: number;
+    minHour: number;
+}

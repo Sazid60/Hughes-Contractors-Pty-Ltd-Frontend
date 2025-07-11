@@ -1,8 +1,8 @@
 import { Dialog, DialogTrigger } from "@/components/ui/dialog";
 import type { IProject } from "@/types/types";
 import { FiTrash2 } from "react-icons/fi";
-import DeleteProjectModal from "./DeleteProjectModal";
-import ProjectUpdateModal from "./ProjectUpdateModal";
+import DeleteProjectModal from "../modals/DeleteProjectModal";
+import ProjectUpdateModal from "../modals/ProjectUpdateModal";
 import { FaEdit } from "react-icons/fa";
 
 

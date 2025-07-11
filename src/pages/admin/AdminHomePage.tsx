@@ -1,4 +1,4 @@
-export default function AdminHome() {
+export default function AdminHomePage() {
     return (
         <div className="text-center flex flex-col items-center justify-center gap-4">
             {/* Logo */}
