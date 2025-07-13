@@ -47,10 +47,14 @@ export default function UpdateLabourModal({ labour }: UpdateLabourModalProps) {
     const watchedValues = watch();
     const isValid = form.formState.isValid;
 
-    // Detect if form values changed from initial (to disable update if nothing changed)
-    const hasChanged = Object.entries(watchedValues).some(
-        ([key, value]) => value !== (labour as any)[key]
-    );
+    // Compare with original labour values, convert numbers to number before comparison
+    const hasChanged = Object.entries(watchedValues).some(([key, value]) => {
+        const originalValue = (labour as any)[key];
+        if (typeof originalValue === "number") {
+            return Number(value) !== originalValue;
+        }
+        return value !== originalValue;
+    });
 
     const [updateLabour, { isLoading, isError, error }] = useUpdateLabourMutation();
 
@@ -82,13 +86,16 @@ export default function UpdateLabourModal({ labour }: UpdateLabourModalProps) {
                     <FormField
                         control={form.control}
                         name="jobType"
-
                         rules={{ required: "Job type is required" }}
                         render={({ field }) => (
                             <FormItem>
                                 <FormLabel>Job Type</FormLabel>
                                 <FormControl>
-                                    <Input className="rounded-none" placeholder="Enter job type" {...field} />
+                                    <Input
+                                        className="rounded-none"
+                                        placeholder="Enter job type"
+                                        {...field}
+                                    />
                                 </FormControl>
                                 <FormMessage />
                             </FormItem>
@@ -113,6 +120,10 @@ export default function UpdateLabourModal({ labour }: UpdateLabourModalProps) {
                                         step="0.01"
                                         placeholder="Enter per hour rate"
                                         {...field}
+                                        onChange={(e) =>
+                                            field.onChange(Number(e.target.value))
+                                        }
+                                        value={field.value ?? ""}
                                     />
                                 </FormControl>
                                 <FormMessage />
@@ -137,6 +148,10 @@ export default function UpdateLabourModal({ labour }: UpdateLabourModalProps) {
                                         type="number"
                                         placeholder="Enter minimum hours"
                                         {...field}
+                                        onChange={(e) =>
+                                            field.onChange(Number(e.target.value))
+                                        }
+                                        value={field.value ?? ""}
                                     />
                                 </FormControl>
                                 <FormMessage />
@@ -147,7 +162,12 @@ export default function UpdateLabourModal({ labour }: UpdateLabourModalProps) {
                     {/* Footer buttons */}
                     <DialogFooter className="mt-4 flex justify-between">
                         <DialogClose asChild>
-                            <Button className="rounded-none" variant="outline" disabled={isLoading}>
+                            <Button
+                                className="rounded-none"
+                                variant="outline"
+                                disabled={isLoading}
+                                type="button"
+                            >
                                 Cancel
                             </Button>
                         </DialogClose>

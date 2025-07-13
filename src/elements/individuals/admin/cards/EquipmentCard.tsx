@@ -2,8 +2,9 @@ import { Dialog, DialogTrigger } from "@/components/ui/dialog";
 import { FiTrash2 } from "react-icons/fi";
 import { FaEdit } from "react-icons/fa";
 import type { IEquipment } from "@/types/types";
-import EquipmentUpdateModal from "../modals/EquipmentUpdateModal";
-import EquipmentDeleteModal from "../modals/DeleteEquipmentModal";
+import EquipmentUpdateModal from "@/elements/individuals/admin/modals/EquipmentUpdateModal";
+import EquipmentDeleteModal from "@/elements/individuals/admin/modals/DeleteEquipmentModal";
+
 
 
 interface EquipmentCardProps {

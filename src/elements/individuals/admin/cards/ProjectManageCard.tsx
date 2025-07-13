@@ -1,9 +1,10 @@
 import { Dialog, DialogTrigger } from "@/components/ui/dialog";
 import type { IProject } from "@/types/types";
 import { FiTrash2 } from "react-icons/fi";
-import DeleteProjectModal from "../modals/DeleteProjectModal";
-import ProjectUpdateModal from "../modals/ProjectUpdateModal";
+
 import { FaEdit } from "react-icons/fa";
+import ProjectUpdateModal from "@/elements/individuals/admin/modals/ProjectUpdateModal";
+import DeleteProjectModal from "@/elements/individuals/admin/modals/DeleteProjectModal";
 
 
 interface ProjectCardProps {

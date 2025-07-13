@@ -1,17 +1,16 @@
-import Banner from "@/elements/individuals/home/Banner";
+import Banner from "@/elements/individuals/user/home/Banner";
 // import ConstructionPortfolio from "@/elements/individuals/home/ConstructionPortfolio";
-import ContactForm from "@/elements/individuals/home/ContactForm";
-import Services from "@/elements/individuals/home/Services";
-import SuccessSection from "@/elements/individuals/home/SuccessSection";
+import ContactForm from "@/elements/individuals/user/home/ContactForm";
+import Services from "@/elements/individuals/user/home/Services";
+import SuccessSection from "@/elements/individuals/user/home/SuccessSection";
 
 export default function HomePage() {
   return (
-    <div>
+    <>
       <Banner />
       <SuccessSection />
       <Services />
-      {/* <ConstructionPortfolio /> */}
       <ContactForm />
-    </div>
+    </>
   );
 }

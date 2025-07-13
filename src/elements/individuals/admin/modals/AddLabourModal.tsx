@@ -1,4 +1,3 @@
-
 import { useEffect } from "react";
 import {
     useForm,
@@ -81,7 +80,11 @@ export default function AddLabourModal() {
                             <FormItem>
                                 <FormLabel>Job Type</FormLabel>
                                 <FormControl>
-                                    <Input className="rounded-none" placeholder="e.g., Electrician" {...field} />
+                                    <Input
+                                        className="rounded-none"
+                                        placeholder="e.g., Electrician"
+                                        {...field}
+                                    />
                                 </FormControl>
                                 <FormMessage />
                             </FormItem>
@@ -106,6 +109,8 @@ export default function AddLabourModal() {
                                         className="rounded-none"
                                         placeholder="e.g., 50"
                                         {...field}
+                                        onChange={(e) => field.onChange(Number(e.target.value))}
+                                        value={field.value ?? ""}
                                     />
                                 </FormControl>
                                 <FormMessage />
@@ -130,6 +135,8 @@ export default function AddLabourModal() {
                                         className="rounded-none"
                                         placeholder="e.g., 2"
                                         {...field}
+                                        onChange={(e) => field.onChange(Number(e.target.value))}
+                                        value={field.value ?? ""}
                                     />
                                 </FormControl>
                                 <FormMessage />

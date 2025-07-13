@@ -10,6 +10,7 @@ export default function AdminDashboardLayout() {
         { path: "/admin", label: "Dashboard Home" },
         { path: "/admin/projects", label: "Manage Projects" },
         { path: "/admin/equipments", label: "Manage Equipments" },
+        { path: "/", label: "← Return To Home" },
     ];
 
     const toggleMenu = () => setIsMenuOpen((prev) => !prev);
@@ -22,7 +23,7 @@ export default function AdminDashboardLayout() {
                 {/* Top */}
                 <div>
                     <Link to="/" className="flex justify-center items-center mb-6">
-                        <img src="/logo.png" className="h-28 w-28 object-cover rounded-full" alt="Logo" />
+                        <img src="/logo.webp" className="h-28 w-28 object-cover rounded-full" alt="Logo" />
                     </Link>
                     <h2 className="text-2xl font-bold text-center mb-6 uppercase">Admin Panel</h2>
                     <nav className="flex flex-col gap-3 border-t-2">
@@ -45,7 +46,7 @@ export default function AdminDashboardLayout() {
                         to="/"
                         className="block mt-8 py-2 px-4 bg-orange-500 hover:bg-orange-600 text-center rounded-none transition"
                     >
-                        ← Return to Website
+                        ← Return to Home
                     </Link>
                 </div>
             </aside>
@@ -53,7 +54,7 @@ export default function AdminDashboardLayout() {
             {/* Mobile Top Navbar */}
             <div className="lg:hidden fixed top-0 left-0 right-0 z-50 backdrop-blur bg-white/70 shadow px-4 py-3 flex items-center justify-between">
                 <Link to="/" onClick={closeMenu}>
-                    <img src="/logo.png" alt="Logo" className="h-10 w-10 object-cover rounded-full" />
+                    <img src="/logo.webp" alt="Logo" className="h-10 w-10 object-cover rounded-full" />
                 </Link>
                 <button onClick={toggleMenu} className="text-3xl text-gray-900">
                     {isMenuOpen ? <HiX /> : <HiMenu />}
@@ -73,7 +74,7 @@ export default function AdminDashboardLayout() {
                 {/* Top: Logo and Close */}
                 <div className="flex items-center justify-between px-4 py-3">
                     <Link to="/" onClick={closeMenu}>
-                        <img src="/logo.png" className="h-10 w-10 object-cover rounded-full" alt="Logo" />
+                        <img src="/logo.webp" className="h-10 w-10 object-cover rounded-full" alt="Logo" />
                     </Link>
                     <button onClick={closeMenu} className="text-2xl">
                         <HiX />
@@ -104,7 +105,7 @@ export default function AdminDashboardLayout() {
                         onClick={closeMenu}
                         className="block w-full text-center py-2 bg-orange-500 hover:bg-orange-600 text-white text-xs md:text-sm transition rounded"
                     >
-                        ← Return to Website
+                        ← Return to Home
                     </Link>
                 </div>
             </div>
