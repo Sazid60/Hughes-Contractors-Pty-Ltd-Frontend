@@ -36,7 +36,7 @@ export default function Footer() {
         <div>
           <Link to="/" className="flex items-center gap-3 mb-4">
             <img
-              src="/logo.png"
+              src="/logo.webp"
               alt="Logo"
               className="h-12 w-12 object-cover rounded-full"
             />
@@ -51,23 +51,23 @@ export default function Footer() {
             <Facebook className="hover:text-white cursor-pointer" />
             <Linkedin className="hover:text-white cursor-pointer" />
             <Instagram className="hover:text-white cursor-pointer" />
-           
+
           </div>
         </div>
 
         {/* === Legal === */}
         <div>
-         <h1 className="font-semibold text-orange-500 pt-2">
-              Civil & Demolition Contractors
-            </h1>
-            <p>Leo Hughes</p>
-            <div className="flex items-center gap-2">
-              <Phone size={16} className="text-blue-400" />
-              <span>+61 419 408 349</span>
-            </div>
-           <div className="flex gap-2 pt-2">
-              {/* WhatsApp Icon with link */}
-               <a
+          <h1 className="font-semibold text-orange-500 pt-2">
+            Civil & Demolition Contractors
+          </h1>
+          <p>Leo Hughes</p>
+          <div className="flex items-center gap-2">
+            <Phone size={16} className="text-blue-400" />
+            <span>+61 419 408 349</span>
+          </div>
+          <div className="flex gap-2 pt-2">
+            {/* WhatsApp Icon with link */}
+            <a
               href="https://wa.me/61419408349"
               target="_blank"
               rel="noopener noreferrer"
@@ -76,9 +76,9 @@ export default function Footer() {
             >
               <WhatsAppIcon size={20} />
             </a>
-             <p>Whatsapp</p>
-           
-           </div>
+            <p>Whatsapp</p>
+
+          </div>
         </div>
 
         {/* === Quick Links === */}
@@ -91,8 +91,7 @@ export default function Footer() {
                   to={to}
                   end={to === "/"}
                   className={({ isActive }) =>
-                    `text-sm hover:underline ${
-                      isActive ? "text-white font-semibold" : "text-gray-400"
+                    `text-sm hover:underline ${isActive ? "text-white font-semibold" : "text-gray-400"
                     }`
                   }
                 >
@@ -123,7 +122,7 @@ export default function Footer() {
               <Phone size={16} className="text-blue-400" />
               <span>02 8384 9867</span>
             </div>
-          
+
           </div>
         </div>
       </div>

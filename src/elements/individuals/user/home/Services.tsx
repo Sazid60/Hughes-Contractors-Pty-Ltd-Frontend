@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Dialog, DialogTrigger } from "@/components/ui/dialog"
-import AppointmentModal from "@/elements/modals/AppointmentModal"
+import AppointmentModal from "@/elements/individuals/user/modals/AppointmentModal"
 import MainContainer from "@/layouts/containers/MainContainer"
 import { FaHardHat, FaIndustry, FaTools, FaBuilding, FaSolarPanel, FaTruckMoving, FaBroom, FaLeaf } from "react-icons/fa"
 
@@ -73,77 +73,80 @@ export default function Services() {
 
   ]
   return (
-    <MainContainer>
-      <section className="relative min-h-screen py-10 px-0 sm:px-6 lg:px-8">
-        {/* Header Section */}
-        <div className="max-w-7xl mx-auto mb-6 md:mb-16">
-          <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4 md:gap-8">
-            <div className="max-w-2xl">
-              <h2 className="text-xl sm:text-4xl lg:text-5xl  font-bold mb-3 md:mb-6 uppercase">Our Core Services</h2>
-              <p className="text-xs md:text-sm text-gray-600 leading-relaxed">
-                Hughes Contractors Pty Ltd offers a diverse range of expert services tailored to meet modern construction,
-                demolition, and infrastructure needs.
-              </p>
-            </div>
-            <Dialog>
-              <DialogTrigger asChild>
-                <Button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 text-xs md:text-sm font-semibold self-start lg:self-auto rounded-none">
-                  Book Appointment →
-                </Button>
-              </DialogTrigger>
-              <AppointmentModal />
-            </Dialog>
-            {/* <Button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 text-xs md:text-sm font-semibold self-start lg:self-auto rounded-none">
+    <>
+      <MainContainer>
+        <section className="relative min-h-screen py-10 px-0 sm:px-6 lg:px-8">
+          {/* Header Section */}
+          <div className="max-w-7xl mx-auto mb-6 md:mb-16">
+            <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4 md:gap-8">
+              <div className="max-w-2xl">
+                <h2 className="text-xl sm:text-4xl lg:text-5xl  font-bold mb-3 md:mb-6 uppercase">Our Core Services</h2>
+                <p className="text-xs md:text-sm text-gray-600 leading-relaxed">
+                  Hughes Contractors Pty Ltd offers a diverse range of expert services tailored to meet modern construction,
+                  demolition, and infrastructure needs.
+                </p>
+              </div>
+              <Dialog>
+                <DialogTrigger asChild>
+                  <Button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 text-xs md:text-sm font-semibold self-start lg:self-auto rounded-none">
+                    Book Appointment →
+                  </Button>
+                </DialogTrigger>
+                <AppointmentModal />
+              </Dialog>
+              {/* <Button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 text-xs md:text-sm font-semibold self-start lg:self-auto rounded-none">
               Book Appointment
               <FaArrowRight className="ml-2 h-5 w-5" />
             </Button> */}
+            </div>
           </div>
-        </div>
 
-        {/* Background Image with Service Cards */}
-        <div className="max-w-7xl mx-auto">
-          <div
-            className="relative  overflow-hidden min-h-[600px] bg-cover bg-center bg-no-repeat"
-            style={{
-              backgroundImage: "url('/services.jpg')",
-            }}
-          >
-            {/* Overlay */}
-            <div className="absolute inset-0 bg-black/40" />
+          {/* Background Image with Service Cards */}
+          <div className="max-w-7xl mx-auto">
+            <div
+              className="relative  overflow-hidden min-h-[600px] bg-cover bg-center bg-no-repeat"
+              style={{
+                backgroundImage: "url('/service.webp')",
 
-            {/* Service Cards */}
-            <div className="relative z-10 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-6 p-2 md:p-8 lg:p-12 h-full items-end">
-              {services.map((service) => {
-                const IconComponent = service.icon
-                return (
-                  <Card key={service.id} className=" bg-black/40 backdrop-blur-sm border-0 shadow-xl rounded-none">
-                    <CardContent className="p-2 ">
-                      {/* Icon and Number */}
-                      <div className="flex items-start justify-between mb-4 mx-4">
-                        <div className="bg-orange-500 p-3 ">
-                          <IconComponent className="h-3 w-3 md:h-6 md:w-6 text-white" />
+              }}
+            >
+              {/* Overlay */}
+              <div className="absolute inset-0 bg-black/40" />
+
+              {/* Service Cards */}
+              <div className="relative z-10 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-6 p-2 md:p-8 lg:p-12 h-full items-end">
+                {services.map((service) => {
+                  const IconComponent = service.icon
+                  return (
+                    <Card key={service.id} className=" bg-black/40 backdrop-blur-sm border-0 shadow-xl rounded-none">
+                      <CardContent className="p-2 ">
+                        {/* Icon and Number */}
+                        <div className="flex items-start justify-between mb-4 mx-4">
+                          <div className="bg-orange-500 p-3 ">
+                            <IconComponent className="h-3 w-3 md:h-6 md:w-6 text-white" />
+                          </div>
+                          <span className="text-3xl md:text-6xl font-bold text-gray-200 leading-none">{service.id}</span>
                         </div>
-                        <span className="text-3xl md:text-6xl font-bold text-gray-200 leading-none">{service.id}</span>
-                      </div>
 
-                      {/* Content */}
-                      <h3 className="text-sm sm:text-lg md:text-[25px]  font-bold text-orange-500 mb-3 text-center">{service.title}</h3>
-                      <p className="text-white text-xs sm:text-sm md:text-[19px] leading-relaxed mb-4 min-h-[100px] md:min-h-[180px] text-center">{service.description}</p>
+                        {/* Content */}
+                        <h3 className="text-sm sm:text-lg md:text-[25px]  font-bold text-orange-500 mb-3 text-center">{service.title}</h3>
+                        <p className="text-white text-xs sm:text-sm md:text-[19px] leading-relaxed mb-4 min-h-[100px] md:min-h-[180px] text-center">{service.description}</p>
 
-                      {/* Read More Link */}
-                      {/* <button className="text-orange-500 font-semibold text-sm hover:text-orange-600 transition-colors flex items-center group">
+                        {/* Read More Link */}
+                        {/* <button className="text-orange-500 font-semibold text-sm hover:text-orange-600 transition-colors flex items-center group">
                       Read More
                       <FaArrowRight className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                     </button> */}
-                    </CardContent>
-                  </Card>
-                )
-              })}
+                      </CardContent>
+                    </Card>
+                  )
+                })}
+              </div>
             </div>
           </div>
-        </div>
-      </section>
-    </MainContainer>
+        </section>
+      </MainContainer>
+    </>
 
   )
 }
