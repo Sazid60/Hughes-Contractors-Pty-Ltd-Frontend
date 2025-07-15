@@ -13,6 +13,11 @@ export const projectApi = createApi({
             query: () => "/projects",
             providesTags: ["Projects"],
         }),
+        getProjectById: builder.query({
+            query: (id: string) => `/projects/${id}`,
+            providesTags: ["Projects"],
+        }),
+
         addProject: builder.mutation({
             query: (body) => ({
                 url: "/projects",
@@ -65,7 +70,6 @@ export const projectApi = createApi({
             }),
             invalidatesTags: ["Equipments"],
         }),
-
         // -------------------- Labours --------------------
         getLabours: builder.query({
             query: () => "/labours",
@@ -103,6 +107,7 @@ export const {
     useAddProjectMutation,
     useUpdateProjectMutation,
     useDeleteProjectMutation,
+    useGetProjectByIdQuery,
 
     // Equipments
     useGetEquipmentsQuery,
