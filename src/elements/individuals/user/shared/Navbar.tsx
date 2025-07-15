@@ -10,7 +10,7 @@ export default function Navbar() {
     const navLinks = [
         { to: "/", label: "Home" },
         { to: "/projects", label: "Projects" },
-        { to: "/pricing", label: "Our-Pricing" },
+        { to: "/pricing", label: "Equipment & Pricing" },
     ];
 
     const toggleMenu = () => setIsMenuOpen(prev => !prev);
