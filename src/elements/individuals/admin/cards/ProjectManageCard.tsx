@@ -72,10 +72,11 @@ export default function ProjectManageCard({ project }: ProjectCardProps) {
                     </span>
                 </p>
 
+                <p className=" mb-1 line-clamp-3"><span className="font-semibold italic">Description : </span> {project.description} </p>
                 {/* Description */}
                 <div className="text-sm  mt-auto">
-                    <p className="font-semibold mb-1">Description : </p>
-                    <p className="line-clamp-3">{project.description}</p>
+
+                    <p className=""></p>
                 </div>
             </div>
         </div>

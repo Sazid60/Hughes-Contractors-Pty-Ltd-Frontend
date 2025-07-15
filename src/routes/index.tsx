@@ -10,6 +10,7 @@ import AdminHome from "@/pages/admin/AdminHomePage";
 import OurPricing from "@/pages/OurPricing";
 import ManageProjectsPage from "@/pages/admin/ManageProjectsPage";
 import ManageEquipmentsPage from "@/pages/admin/ManageEquipmentsPage";
+import ProjectDetails from "@/pages/ProjectDetails";
 
 
 
@@ -32,7 +33,10 @@ const router = createBrowserRouter([
                 index: true,
                 Component: HomePage,
             },
-
+            {
+                path: "projects/:id",
+                Component: ProjectDetails
+            },
             {
                 path: "projects",
                 Component: Projects,
