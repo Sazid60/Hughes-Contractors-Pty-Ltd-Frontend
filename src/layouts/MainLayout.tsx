@@ -1,4 +1,4 @@
-// import Footer from "@/elements/shared/Footer";
+
 import Navbar from "@/elements/individuals/user/shared/Navbar";
 import { Outlet, ScrollRestoration } from "react-router";
 
