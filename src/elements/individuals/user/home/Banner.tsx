@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogTrigger } from "@/components/ui/dialog";
 import AppointmentModal from "@/elements/individuals/user/modals/AppointmentModal";
+import { Link } from "react-router";
 
 export default function Banner() {
     return (
@@ -37,9 +38,12 @@ export default function Banner() {
                             </DialogTrigger>
                             <AppointmentModal />
                         </Dialog>
-                        <Button className="border bg-transparent hover:bg-transparent border-white text-white font-semibold px-5 py-3  text-xs md:text-sm shadow-md hover:scale-101  transition rounded-none">
-                            Projects →
-                        </Button>
+
+                        <Link to={"/projects"}>
+                            <Button className="border bg-transparent hover:bg-transparent border-white text-white font-semibold px-5 py-3  text-xs md:text-sm shadow-md hover:scale-101  transition rounded-none">
+                                Projects →
+                            </Button>
+                        </Link>
                     </div>
                 </div>
             </section>

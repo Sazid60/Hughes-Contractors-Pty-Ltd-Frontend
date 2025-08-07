@@ -29,6 +29,7 @@ interface LabourFormValues {
     jobType: string;
     perHourRate: number;
     minHour: number;
+    afterHourRate: number; // Added this field
 }
 
 export default function AddLabourModal() {
@@ -38,6 +39,7 @@ export default function AddLabourModal() {
             jobType: "",
             perHourRate: 0,
             minHour: 1,
+            afterHourRate: 0, // default value for afterHourRate
         },
     });
 
@@ -134,6 +136,33 @@ export default function AddLabourModal() {
                                         type="number"
                                         className="rounded-none"
                                         placeholder="e.g., 2"
+                                        {...field}
+                                        onChange={(e) => field.onChange(Number(e.target.value))}
+                                        value={field.value ?? ""}
+                                    />
+                                </FormControl>
+                                <FormMessage />
+                            </FormItem>
+                        )}
+                    />
+
+                    {/* After Hour Rate */}
+                    <FormField
+                        control={form.control}
+                        name="afterHourRate"
+                        rules={{
+                            required: "After hour rate is required",
+                            min: { value: 0, message: "Rate must be a positive number" },
+                        }}
+                        render={({ field }) => (
+                            <FormItem>
+                                <FormLabel>After Hour Rate ($)</FormLabel>
+                                <FormControl>
+                                    <Input
+                                        type="number"
+                                        step="0.01"
+                                        className="rounded-none"
+                                        placeholder="e.g., 75"
                                         {...field}
                                         onChange={(e) => field.onChange(Number(e.target.value))}
                                         value={field.value ?? ""}
