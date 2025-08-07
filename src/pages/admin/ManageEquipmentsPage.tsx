@@ -77,8 +77,9 @@ export default function ManageEquipmentsPage() {
                                 <tr>
                                     <th className="border text-sm uppercase px-4 py-2 text-left whitespace-nowrap">Job Type</th>
                                     <th className="border text-sm uppercase px-4 py-2 text-left whitespace-nowrap">Per Hour Rate</th>
-                                    <th className="border text-sm uppercase  px-4 py-2 text-left whitespace-nowrap">Min Hour</th>
-                                    <th className="border text-sm uppercase  px-1 py-2 text-right whitespace-nowrap">Actions</th>
+                                    <th className="border text-sm uppercase px-4 py-2 text-left whitespace-nowrap">Min Hour</th>
+                                    <th className="border text-sm uppercase px-4 py-2 text-left whitespace-nowrap">After Hour Rate</th> 
+                                    <th className="border text-sm uppercase px-1 py-2 text-right whitespace-nowrap">Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -87,6 +88,7 @@ export default function ManageEquipmentsPage() {
                                         <td className="border px-4 py-2">{labour.jobType}</td>
                                         <td className="border px-4 py-2">${labour.perHourRate}</td>
                                         <td className="border px-4 py-2">{labour.minHour} hrs</td>
+                                        <td className="border px-4 py-2">${labour.afterHourRate}</td>
                                         <td className="border px-2 py-2 whitespace-nowrap text-sm">
                                             <div className="flex justify-end gap-2">
                                                 {/* Edit Icon Button */}

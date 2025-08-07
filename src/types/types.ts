@@ -30,6 +30,7 @@ export interface ILabour {
     jobType: string;
     perHourRate: number;
     minHour: number;
+    afterHourRate: number
 }
 
 export interface IEquipment {
@@ -39,10 +40,12 @@ export interface IEquipment {
     hourlyRate: number;
     minHour: number;
     floatCharge: number;
+    description: string;
 }
 
 export interface LabourFormValues {
     jobType: string;
     perHourRate: number;
     minHour: number;
+    afterHourRate: number
 }

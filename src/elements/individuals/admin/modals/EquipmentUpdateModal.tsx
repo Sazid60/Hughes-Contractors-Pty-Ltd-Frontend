@@ -32,6 +32,7 @@ interface EquipmentFormValues {
     hourlyRate: number | string;
     minHour: number | string;
     floatCharge: number | string;
+    description: string;
 }
 
 interface EquipmentUpdateModalProps {
@@ -47,6 +48,7 @@ export default function EquipmentUpdateModal({ equipment }: EquipmentUpdateModal
             hourlyRate: equipment.hourlyRate,
             minHour: equipment.minHour,
             floatCharge: equipment.floatCharge,
+            description: equipment.description,
         },
     });
 
@@ -95,6 +97,7 @@ export default function EquipmentUpdateModal({ equipment }: EquipmentUpdateModal
                 minHour: Number(data.minHour),
                 floatCharge: Number(data.floatCharge),
                 equipmentImage: imageUrl,
+                description: data.description,
             };
 
             const res = await updateEquipment({ id: equipment._id, ...updatedPayload }).unwrap();
@@ -188,6 +191,21 @@ export default function EquipmentUpdateModal({ equipment }: EquipmentUpdateModal
                                 <FormLabel>Float Charge</FormLabel>
                                 <FormControl>
                                     <Input type="number" step="0.01" className="rounded-none" placeholder="Float Charge" {...field} />
+                                </FormControl>
+                                <FormMessage />
+                            </FormItem>
+                        )}
+                    />
+
+                    <FormField
+                        control={form.control}
+                        name="description"
+                        rules={{ required: "Description is required" }}
+                        render={({ field }) => (
+                            <FormItem>
+                                <FormLabel>Description</FormLabel>
+                                <FormControl>
+                                    <Input className="rounded-none" placeholder="Enter equipment description" {...field} />
                                 </FormControl>
                                 <FormMessage />
                             </FormItem>

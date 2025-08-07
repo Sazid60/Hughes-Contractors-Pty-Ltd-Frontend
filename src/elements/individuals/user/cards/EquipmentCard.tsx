@@ -34,6 +34,9 @@ export default function EquipmentCard({ equipment }: EquipmentCardProps) {
                 <p className="text-xs sm:text-sm">
                     <span className="font-semibold text-orange-500">Float Charge:</span> ${equipment.floatCharge}
                 </p>
+                <p className="text-xs sm:text-sm">
+                    <span className="font-semibold text-orange-500">Description:</span> {equipment.description}
+                </p>
             </div>
         </div>
     );

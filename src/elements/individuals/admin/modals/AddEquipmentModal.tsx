@@ -34,6 +34,7 @@ interface EquipmentFormValues {
     hourlyRate: number | string;
     minHour: number | string;
     floatCharge: number | string;
+    description: string;
 }
 
 export default function AddEquipmentModal() {
@@ -45,6 +46,7 @@ export default function AddEquipmentModal() {
             hourlyRate: 0,
             minHour: 0,
             floatCharge: 0,
+            description: "",
         },
     });
 
@@ -94,7 +96,8 @@ export default function AddEquipmentModal() {
                 hourlyRate: Number(rest.hourlyRate),
                 minHour: Number(rest.minHour),
                 floatCharge: Number(rest.floatCharge),
-                equipmentImage: imageUrl, // This is the actual image URL from imgbb
+                equipmentImage: imageUrl,
+                description: rest.description,
             };
 
             console.log("Sending to backend:", equipmentPayload);
@@ -223,6 +226,25 @@ export default function AddEquipmentModal() {
                                         min="0"
                                         className="rounded-none"
                                         placeholder="Enter Float Charge"
+                                        {...field}
+                                    />
+                                </FormControl>
+                                <FormMessage />
+                            </FormItem>
+                        )}
+                    />
+
+                    <FormField
+                        control={form.control}
+                        name="description"
+                        rules={{ required: "Description is required" }}
+                        render={({ field }) => (
+                            <FormItem>
+                                <FormLabel>Description</FormLabel>
+                                <FormControl>
+                                    <Input
+                                        className="rounded-none"
+                                        placeholder="Enter equipment description"
                                         {...field}
                                     />
                                 </FormControl>

@@ -27,6 +27,7 @@ interface ILabourForm {
     jobType: string;
     perHourRate: number;
     minHour: number;
+    afterHourRate: number; // Added here
 }
 
 interface UpdateLabourModalProps {
@@ -40,6 +41,7 @@ export default function UpdateLabourModal({ labour }: UpdateLabourModalProps) {
             jobType: labour.jobType,
             perHourRate: labour.perHourRate,
             minHour: labour.minHour,
+            afterHourRate: labour.afterHourRate ?? 0, // Default fallback to 0 if missing
         },
     });
 
@@ -47,7 +49,7 @@ export default function UpdateLabourModal({ labour }: UpdateLabourModalProps) {
     const watchedValues = watch();
     const isValid = form.formState.isValid;
 
-    // Compare with original labour values, convert numbers to number before comparison
+    // Detect if any value changed compared to initial values
     const hasChanged = Object.entries(watchedValues).some(([key, value]) => {
         const originalValue = (labour as any)[key];
         if (typeof originalValue === "number") {
@@ -120,9 +122,7 @@ export default function UpdateLabourModal({ labour }: UpdateLabourModalProps) {
                                         step="0.01"
                                         placeholder="Enter per hour rate"
                                         {...field}
-                                        onChange={(e) =>
-                                            field.onChange(Number(e.target.value))
-                                        }
+                                        onChange={(e) => field.onChange(Number(e.target.value))}
                                         value={field.value ?? ""}
                                     />
                                 </FormControl>
@@ -148,9 +148,34 @@ export default function UpdateLabourModal({ labour }: UpdateLabourModalProps) {
                                         type="number"
                                         placeholder="Enter minimum hours"
                                         {...field}
-                                        onChange={(e) =>
-                                            field.onChange(Number(e.target.value))
-                                        }
+                                        onChange={(e) => field.onChange(Number(e.target.value))}
+                                        value={field.value ?? ""}
+                                    />
+                                </FormControl>
+                                <FormMessage />
+                            </FormItem>
+                        )}
+                    />
+
+                    {/* After Hour Rate */}
+                    <FormField
+                        control={form.control}
+                        name="afterHourRate"
+                        rules={{
+                            required: "After hour rate is required",
+                            min: { value: 0, message: "Rate must be positive" },
+                        }}
+                        render={({ field }) => (
+                            <FormItem>
+                                <FormLabel>After Hour Rate</FormLabel>
+                                <FormControl>
+                                    <Input
+                                        type="number"
+                                        className="rounded-none"
+                                        step="0.01"
+                                        placeholder="Enter after hour rate"
+                                        {...field}
+                                        onChange={(e) => field.onChange(Number(e.target.value))}
                                         value={field.value ?? ""}
                                     />
                                 </FormControl>

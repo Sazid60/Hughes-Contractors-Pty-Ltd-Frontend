@@ -53,6 +53,8 @@ export default function OurPricing() {
                                     <th className="px-4 py-3 border text-center whitespace-nowrap">Job Type</th>
                                     <th className="px-4 py-3 border text-center whitespace-nowrap">Hourly Rate</th>
                                     <th className="px-4 py-3 border text-center whitespace-nowrap">Minimum Hour</th>
+                                    <th className="px-4 py-3 border text-center whitespace-nowrap">After Hour Rate</th> 
+                                    
                                 </tr>
                             </thead>
                             <tbody>
@@ -61,6 +63,7 @@ export default function OurPricing() {
                                         <td className="border px-4 py-2 text-center">{labour.jobType}</td>
                                         <td className="border px-4 py-2 text-center">${labour.perHourRate}</td>
                                         <td className="border px-4 py-2 text-center">{labour.minHour} hrs</td>
+                                         <td className="border px-4 py-2 text-center">${labour.afterHourRate}</td>
                                     </tr>
                                 ))}
                             </tbody>
