@@ -1,118 +1,102 @@
-import { useState } from "react";
-import MainContainer from "@/layouts/containers/MainContainer";
+"use client"
+
+import { useState } from "react"
+import { Card, CardContent } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
+
 
 export default function ConstructionPortfolio() {
-  const [activeTab, setActiveTab] = useState<"mission" | "vision">("mission");
+  const [activeTab, setActiveTab] = useState("mission")
+
   return (
-    <>
-      <MainContainer>
-        <section className="bg-white py-12 px-4 md:px-10 lg:px-20">
+    <section className="bg-gray-100 py-8 md:py-16 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 justify-center items-center">
 
-
-          <div className="grid grid-cols-1 lg:grid-cols-2  gap-10 items-start">
-            {/* === Left Image Section === */}
-            <div className="w-full">
-              <img
-                src="/contractor-1.webp"
-                alt="Construction Site"
-                className="w-full  h-full rounded-lg shadow-md object-cover"
-              />
-            </div>
-
-            {/* === Right Content Section === */}
-            <div className="space-y-8">
-              {/* === Project Overview === */}
-              <div>
-                {/* === Section Title === */}
-                <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-10 uppercase text-left ">
-                  Explore Our Construction Portfolio
-                </h1>
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800 mb-2">
-                  Project Overview
-                </h2>
-                <h5 className="text-xs md:text-sm text-gray-600 mb-3">
-                  Quis nulla blandit vulputate morbi adipiscing sem vestibulum.
-                  Nulla turpis integer dui sed posuere sem. Id molestie mi arcu
-                  gravida lorem potenti.
-                </h5>
-                <p className="text-xs md:text-sm text-gray-600">
-                  Elever Architecture is a New-York-based studio practice focused
-                  on modern design, interiors and landscapes. From our inception in
-                  2007, we have delivered exceptional public and private
-                  environments that are stimulating to occupy and fundamental to
-                  their surroundings.
-                </p>
-              </div>
-
-              {/* === Architect Info === */}
-              <div className="flex items-center gap-4 mt-4">
-                <img
-                  src="/contractor-1.webp"
-                  alt="Architect"
-                  className="w-14 h-14 object-cover rounded-full border"
-                  loading="lazy"
-                />
-                <div>
-                  <span className="block font-semibold text-sm text-gray-800">
-                    Markus Danile
-                  </span>
-                  <span className="block text-xs text-gray-500">
-                    Architect Studio
-                  </span>
-                </div>
-              </div>
-
-              {/* === Mission & Vision === */}
-              <div>
-                {/* === Tab Buttons === */}
-                <div className="flex space-x-4 mb-4">
-                  <button
-                    onClick={() => setActiveTab("mission")}
-                    className={`px-4 py-2 rounded font-semibold transition-all ${activeTab === "mission"
-                      ? "bg-orange-600 text-white"
-                      : "bg-gray-200 text-gray-700 hover:bg-gray-300"
-                      }`}
-                  >
-                    Mission
-                  </button>
-                  <button
-                    onClick={() => setActiveTab("vision")}
-                    className={`px-4 py-2 rounded font-semibold transition-all ${activeTab === "vision"
-                      ? "bg-orange-600 text-white"
-                      : "bg-gray-200 text-gray-700 hover:bg-gray-300"
-                      }`}
-                  >
-                    Vision
-                  </button>
-                </div>
-
-                {/* === Tab Title === */}
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 text-orange-500">
-                  Our {activeTab === "mission" ? "Mission" : "Vision"}
-                </h2>
-
-                {/* === Tab Content === */}
-                <p className="text-xs md:text-sm text-gray-700">
-                  {activeTab === "mission" ? (
-                    <>
-                      t Hughes Contractors Pty Ltd, our mission is to provide dependable, high-quality civil construction and infrastructure services that uphold the highest standards of safety, efficiency, and professionalism. Based in Botany, NSW, we are a family-owned and operated business with a hands-on approach to every project. Backed by a team of experienced engineers, a qualified quantity surveyor, and a skilled workforce of over 75 employees and subcontractors, we are well-positioned to manage and deliver projects of varying scope and complexity throughout Sydney.
-
-                      We pride ourselves on offering tailored solutions that combine technical expertise, modern equipment, and industry best practices. With access to a fleet of unlimited trucks and trailers, we are able to respond quickly and effectively to the evolving needs of our clients. Our company culture is built on reliability, accountability, and a genuine commitment to the welfare of our people. We continuously refine our work practices to ensure projects are completed on time, within budget, and with minimal disruption—while maintaining an unwavering focus on safety, quality, and client satisfaction.
-
-                    </>
-                  ) : (
-                    <>
-                      Hughes Contractors Pty Ltd envisions becoming a premier civil construction partner in New South Wales, recognised for our integrity, innovation, and excellence in project delivery. We aspire to be a company of choice for government agencies, private developers, and infrastructure partners by consistently demonstrating our ability to meet complex project demands with professionalism, agility, and care.
-
-                      Our long-term vision is to grow sustainably while maintaining the values of a family-owned business—ensuring that trust, transparency, and personal accountability remain at the core of everything we do. We aim to lead by example in workplace safety, environmental stewardship, and community engagement. By investing in our people, embracing technological advancement, and building strong industry relationships, we seek to contribute meaningfully to the development of Sydney infrastructure and set new standards for excellence in the civil construction industry.
-                    </>
-                  )}
-                </p>
-              </div>
-            </div>
+          {/* Left Side - Image */}
+          <div className="relative w-full h-full">
+            <img
+              src="/contractorPortfolio.webp"
+              alt="Construction worker building wooden frame"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-black opacity-40"></div> 
           </div>
-        </section>
-      </MainContainer>
-    </>
-  );
+
+
+
+          {/* Right Side - Content */}
+          <div className="flex flex-col justify-center">
+            {/* Header */}
+            <div className="mb-6">
+              <h2 className="text-lg sm:text-3xl lg:text-4xl font-bold mb-4 text-gray-900 uppercase">
+                Construction Portfolio
+              </h2>
+              <p className="text-sm sm:text-base text-gray-600 mb-6">
+                Hughes Contractors Pty Ltd delivers high-quality civil construction projects with a focus on safety,precision, and client satisfaction. From excavation to full-scale infrastructure, we bring hands-on expertise to every site.
+              </p>
+              <p className="text-sm text-gray-500 leading-relaxed">
+                Based in Botany, NSW, our family-owned team partners with clients across sectors to deliver tailored construction solutions. With modern equipment, experienced professionals, and a commitment to excellence, we help shape the infrastructure that supports growing communities.
+              </p>
+            </div>
+
+            {/* Profile and ABN Section */}
+            <div className=" text-center mb-6 gap-4">
+              {/* Profile */}
+
+              {/* ABN Number */}
+              <div className="border-2 px-4 py-2 ">
+                <p className="text-lg sm:text-xl font-bold text-orange-400">
+                  ABN: 21633533276
+                </p>
+              </div>
+            </div>
+
+            {/* Mission/Vision Buttons */}
+            <div className="flex mb-6">
+              <Button
+                onClick={() => setActiveTab("mission")}
+                className={`px-6 py-2 text-xs font-semibold transition-colors border-r-0 rounded-none ${activeTab === "mission"
+                  ? "bg-orange-500 text-white hover:bg-orange-600 border-orange-500"
+                  : "bg-transparent text-gray-700 border border-gray-300 hover:bg-gray-50"
+                  }`}
+                variant={activeTab === "mission" ? "default" : "outline"}
+              >
+                Our Mission
+              </Button>
+              <Button
+                onClick={() => setActiveTab("vision")}
+                className={`px-6 py-2 text-xs font-semibold transition-colors rounded-none ${activeTab === "vision"
+                  ? "bg-orange-500 text-white hover:bg-orange-600 border-orange-500"
+                  : "bg-transparent text-gray-700 border border-gray-300 hover:bg-gray-50"
+                  }`}
+                variant={activeTab === "vision" ? "default" : "outline"}
+              >
+                Our Vision
+              </Button>
+            </div>
+
+            {/* Mission/Vision Content */}
+            <Card className=" rounded-none">
+              <CardContent className="p-4 sm:p-6">
+                <div className="">
+                  {activeTab === "mission" ? (
+                    <p className="text-sm  leading-relaxed italic">
+                      We deliver high-quality civil construction and infrastructure services with a strong commitment to safety, professionalism, and client-focused outcomes. Based in Botany, NSW, we are a family-owned company supported by experienced engineers, a qualified quantity surveyor, and a skilled team of over 75. With access to unlimited trucks and trailers, we offer fast, tailored solutions for projects of all sizes. Our approach is built on reliability, accountability, and efficiency—ensuring every client receives exceptional service, on-time delivery, and lasting value on every project we manage.
+
+                    </p>
+                  ) : (
+                    <p className="text-sm  leading-relaxed italic">
+                      Our vision is to be a trusted civil construction partner in NSW—recognised for our innovation, integrity, and excellence in client delivery. We aim for sustainable growth while preserving our family-owned values of trust and transparency. By investing in our people, embracing new technology, and prioritizing safety and the environment, we strive to build a better future. Our goal is to create long-term client relationships and deliver infrastructure that strengthens communities, exceeds expectations, and sets new benchmarks for performance and professionalism in the industry.
+
+                    </p>
+                  )}
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </div>
+    </section >
+  )
 }
