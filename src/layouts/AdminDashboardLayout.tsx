@@ -10,6 +10,7 @@ export default function AdminDashboardLayout() {
         { path: "/admin", label: "Dashboard Home" },
         { path: "/admin/projects", label: "Manage Projects" },
         { path: "/admin/equipments", label: "Manage Equipments" },
+        { path: "/admin/terms", label: "Manage Terms" },
         { path: "/", label: "← Return To Home" },
     ];
 
