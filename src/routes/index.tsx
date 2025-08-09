@@ -11,6 +11,7 @@ import OurPricing from "@/pages/OurPricing";
 import ManageProjectsPage from "@/pages/admin/ManageProjectsPage";
 import ManageEquipmentsPage from "@/pages/admin/ManageEquipmentsPage";
 import ProjectDetails from "@/pages/ProjectDetails";
+import TermsPage from "@/pages/admin/TermsPage";
 
 
 
@@ -22,6 +23,7 @@ const router = createBrowserRouter([
             { index: true, Component: AdminHome },
             { path: "projects", Component: ManageProjectsPage },
             { path: "equipments", Component: ManageEquipmentsPage },
+            { path: "terms", Component: TermsPage },
         ],
     },
     {
