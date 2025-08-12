@@ -1,4 +1,8 @@
 import Banner from "@/elements/individuals/user/home/Banner";
+import CertificatesSection from "@/elements/individuals/user/home/Certificates";
+
+
+
 import ConstructionPortfolio from "@/elements/individuals/user/home/ConstructionPortfolio";
 // import ConstructionPortfolio from "@/elements/individuals/home/ConstructionPortfolio";
 import ContactForm from "@/elements/individuals/user/home/ContactForm";
@@ -13,6 +17,7 @@ export default function HomePage() {
       <Services />
       <ConstructionPortfolio/>
       <ContactForm />
+      <CertificatesSection/>
     </>
   );
 }

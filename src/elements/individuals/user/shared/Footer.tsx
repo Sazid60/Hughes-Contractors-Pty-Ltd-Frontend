@@ -7,6 +7,7 @@ const navLinks = [
   { to: "/", label: "Home" },
   { to: "/projects", label: "Projects" },
   { to: "/pricing", label: "Our Pricing" },
+  { to: "/terms-and-conditions", label: "Terms and Condition" },
 ];
 
 // Only 3 social/contact icons as requested:

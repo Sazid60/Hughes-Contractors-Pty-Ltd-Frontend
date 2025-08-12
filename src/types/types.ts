@@ -49,3 +49,9 @@ export interface LabourFormValues {
     minHour: number;
     afterHourRate: number
 }
+
+export interface ICertification {
+    _id: string,
+    title: string;
+    imageUrl: string;
+}
