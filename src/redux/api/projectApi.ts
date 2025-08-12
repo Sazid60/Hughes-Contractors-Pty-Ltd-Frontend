@@ -4,11 +4,11 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const projectApi = createApi({
   reducerPath: "projectApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: "https://hughes-contractors-pty-ltd-backend.vercel.app/api/v1",
+    baseUrl: "http://localhost:5000/api/v1",
   }),
-  tagTypes: ["Projects", "Equipments", "Labours", "Terms"],
+  tagTypes: ["Projects", "Equipments", "Labours", "Terms", "Certifications"],
   endpoints: (builder) => ({
-    // Projects...
+    // ================= Projects =================
     getProjects: builder.query({
       query: () => "/projects",
       providesTags: ["Projects"],
@@ -41,7 +41,7 @@ export const projectApi = createApi({
       invalidatesTags: ["Projects"],
     }),
 
-    // Equipments...
+    // ================= Equipments =================
     getEquipments: builder.query({
       query: () => "/equipments",
       providesTags: ["Equipments"],
@@ -70,7 +70,7 @@ export const projectApi = createApi({
       invalidatesTags: ["Equipments"],
     }),
 
-    // Labours...
+    // ================= Labours =================
     getLabours: builder.query({
       query: () => "/labours",
       providesTags: ["Labours"],
@@ -99,7 +99,7 @@ export const projectApi = createApi({
       invalidatesTags: ["Labours"],
     }),
 
-    // Terms PDF...
+    // ================= Terms PDF =================
     getTerms: builder.query({
       query: () => "/terms",
       providesTags: ["Terms"],
@@ -113,12 +113,32 @@ export const projectApi = createApi({
       invalidatesTags: ["Terms"],
     }),
     deleteTerms: builder.mutation<void, void>({
-      // Assuming your API deletes the only terms PDF or clears terms
       query: () => ({
         url: "/terms",
         method: "DELETE",
       }),
       invalidatesTags: ["Terms"],
+    }),
+
+    // ================= Certifications =================
+    getCertifications: builder.query({
+      query: () => "/certifications",
+      providesTags: ["Certifications"],
+    }),
+    addCertification: builder.mutation<any, FormData>({
+      query: (formData) => ({
+        url: "/certifications",
+        method: "POST",
+        body: formData,
+      }),
+      invalidatesTags: ["Certifications"],
+    }),
+    deleteCertification: builder.mutation({
+      query: (id: string) => ({
+        url: `/certifications/${id}`,
+        method: "DELETE",
+      }),
+      invalidatesTags: ["Certifications"],
     }),
   }),
 });
@@ -147,4 +167,9 @@ export const {
   useGetTermsQuery,
   useUploadTermsMutation,
   useDeleteTermsMutation,
+
+  // Certifications
+  useGetCertificationsQuery,
+  useAddCertificationMutation,
+  useDeleteCertificationMutation,
 } = projectApi;

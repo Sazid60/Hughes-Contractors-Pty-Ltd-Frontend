@@ -11,6 +11,7 @@ export default function AdminDashboardLayout() {
         { path: "/admin/projects", label: "Manage Projects" },
         { path: "/admin/equipments", label: "Manage Equipments" },
         { path: "/admin/terms", label: "Manage Terms" },
+        { path: "/admin/certification", label: "Manage Certifications" },
         { path: "/", label: "← Return To Home" },
     ];
 

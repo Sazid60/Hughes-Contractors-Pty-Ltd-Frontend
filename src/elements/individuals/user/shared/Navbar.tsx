@@ -11,6 +11,7 @@ export default function Navbar() {
         { to: "/", label: "Home" },
         { to: "/projects", label: "Projects" },
         { to: "/pricing", label: "Equipment & Pricing" },
+        { to: "/terms-and-conditions", label: "Terms & Condition" },
     ];
 
     const toggleMenu = () => setIsMenuOpen(prev => !prev);
