@@ -64,7 +64,7 @@ export default function ManageEquipmentsPage() {
                 </div>
 
                 {/* Labour Rates Table */}
-                <div className="px-4 mb-10">
+                <div className="mb-10">
                     <div className="text-center mb-10 px-4">
                         <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2 uppercase">Current Labour Rate</h2>
                         <p className="text-sm sm:text-base md:text-lg text-gray-600">
@@ -129,7 +129,7 @@ export default function ManageEquipmentsPage() {
                 </div>
 
                 {/* Equipment Grid */}
-                <div className="px-4 mb-10">
+                <div className="px-0 mb-10">
                     <div className="text-center mb-10 px-4">
                         <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2 uppercase">All Equipments</h2>
                         <p className="text-sm sm:text-base md:text-lg text-gray-600">
