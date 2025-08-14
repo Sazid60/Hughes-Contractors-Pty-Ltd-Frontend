@@ -81,13 +81,13 @@ export default function ConstructionPortfolio() {
               <CardContent className="p-4 sm:p-6">
                 <div className="">
                   {activeTab === "mission" ? (
-                    <p className="text-sm  leading-relaxed italic">
-                      We deliver high-quality civil construction and infrastructure services with a strong commitment to safety, professionalism, and client-focused outcomes. Based in Botany, NSW, we are a family-owned company supported by experienced engineers, a qualified quantity surveyor, and a skilled team of over 75. With access to unlimited trucks and trailers, we offer fast, tailored solutions for projects of all sizes. Our approach is built on reliability, accountability, and efficiency—ensuring every client receives exceptional service, on-time delivery, and lasting value on every project we manage.
+                    <p className="text-sm  leading-relaxed">
+                      We deliver high-quality civil construction and infrastructure services with a strong commitment to safety, professionalism, and client-focused outcomes. Based in Botany, NSW, we are a family-owned company supported by experienced engineers, a qualified quantity surveyor, and a skilled team of over 75. With access to unlimited trucks and trailers, we offer fast, tailored solutions for projects of all sizes. Our approach is built on reliability, accountability, and efficiency ensuring every client receives exceptional service, on-time delivery, and lasting value on every project we manage.
 
                     </p>
                   ) : (
-                    <p className="text-sm  leading-relaxed italic">
-                      Our vision is to be a trusted civil construction partner in NSW—recognised for our innovation, integrity, and excellence in client delivery. We aim for sustainable growth while preserving our family-owned values of trust and transparency. By investing in our people, embracing new technology, and prioritizing safety and the environment, we strive to build a better future. Our goal is to create long-term client relationships and deliver infrastructure that strengthens communities, exceeds expectations, and sets new benchmarks for performance and professionalism in the industry.
+                    <p className="text-sm  leading-relaxed">
+                      Our vision is to be a trusted civil construction partner in NSW recognized for our innovation, integrity, and excellence in client delivery. We aim for sustainable growth while preserving our family owned values of trust and transparency. By investing in our people, embracing new technology, and prioritizing safety and the environment, we strive to build a better future. Our goal is to create long-term client relationships and deliver infrastructure that strengthens communities, exceeds expectations, and sets new benchmarks for performance and professionalism in the industry.
 
                     </p>
                   )}
