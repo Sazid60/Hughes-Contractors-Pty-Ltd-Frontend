@@ -97,10 +97,10 @@ export default function SuccessSection() {
                                     </div>
                                     <div>
                                         <a
-                                            href="tel:+61283849867"
+                                            href="tel:+61419408349"
                                             className="text-sm sm:text-lg font-bold text-white hover:underline"
                                         >
-                                            +61 2 8384 9867
+                                            +61419408349
                                         </a>
                                         <div className="text-xs text-gray-400">Call us for a free consultation</div>
                                     </div>

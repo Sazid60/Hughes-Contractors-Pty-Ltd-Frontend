@@ -14,6 +14,7 @@ import ProjectDetails from "@/pages/ProjectDetails";
 import TermsPage from "@/pages/admin/TermsPage";
 import TermsAndConditionPage from "@/pages/TermsAndConditionPage";
 import ManageCertifications from "@/pages/admin/ManageCertifications";
+import ManageReviews from "@/pages/admin/ManageReviewsPage";
 
 
 
@@ -27,6 +28,7 @@ const router = createBrowserRouter([
             { path: "equipments", Component: ManageEquipmentsPage },
             { path: "terms", Component: TermsPage },
             { path: "certification", Component: ManageCertifications },
+            { path: "reviews", Component: ManageReviews },
         ],
     },
     {
