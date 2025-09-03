@@ -32,10 +32,10 @@ export default function ConstructionPortfolio() {
               <h2 className="text-lg sm:text-3xl lg:text-4xl font-bold mb-4 text-gray-900 uppercase">
                 Construction Portfolio
               </h2>
-              <p className="text-sm sm:text-base text-gray-600 mb-6">
+              <p className="text-xs sm:text-sm md:text-[19px]  mb-6">
                 Hughes Contractors Pty Ltd delivers high-quality civil construction projects with a focus on safety,precision, and client satisfaction. From excavation to full-scale infrastructure, we bring hands-on expertise to every site.
               </p>
-              <p className="text-sm text-gray-500 leading-relaxed">
+              <p className="text-xs sm:text-sm md:text-[19px] leading-relaxed">
                 Based in Botany, NSW, our family-owned team partners with clients across sectors to deliver tailored construction solutions. With modern equipment, experienced professionals, and a commitment to excellence, we help shape the infrastructure that supports growing communities.
               </p>
             </div>
@@ -56,7 +56,7 @@ export default function ConstructionPortfolio() {
             <div className="flex mb-6">
               <Button
                 onClick={() => setActiveTab("mission")}
-                className={`px-6 py-2 text-xs font-semibold transition-colors border-r-0 rounded-none ${activeTab === "mission"
+                className={`px-6 py-2 text-xs sm:text-sm md:text-[19px] font-semibold transition-colors border-r-0 rounded-none ${activeTab === "mission"
                   ? "bg-orange-500 text-white hover:bg-orange-600 border-orange-500"
                   : "bg-transparent text-gray-700 border border-gray-300 hover:bg-gray-50"
                   }`}
@@ -66,7 +66,7 @@ export default function ConstructionPortfolio() {
               </Button>
               <Button
                 onClick={() => setActiveTab("vision")}
-                className={`px-6 py-2 text-xs font-semibold transition-colors rounded-none ${activeTab === "vision"
+                className={`px-6 py-2 text-xs sm:text-sm md:text-[19px] font-semibold transition-colors rounded-none ${activeTab === "vision"
                   ? "bg-orange-500 text-white hover:bg-orange-600 border-orange-500"
                   : "bg-transparent text-gray-700 border border-gray-300 hover:bg-gray-50"
                   }`}
@@ -81,12 +81,12 @@ export default function ConstructionPortfolio() {
               <CardContent className="p-4 sm:p-6">
                 <div className="">
                   {activeTab === "mission" ? (
-                    <p className="text-sm  leading-relaxed">
+                    <p className="text-xs sm:text-sm md:text-[19px]  leading-relaxed">
                       We deliver high-quality civil construction and infrastructure services with a strong commitment to safety, professionalism, and client-focused outcomes. Based in Botany, NSW, we are a family-owned company supported by experienced engineers, a qualified quantity surveyor, and a skilled team of over 75. With access to unlimited trucks and trailers, we offer fast, tailored solutions for projects of all sizes. Our approach is built on reliability, accountability, and efficiency ensuring every client receives exceptional service, on-time delivery, and lasting value on every project we manage.
 
                     </p>
                   ) : (
-                    <p className="text-sm  leading-relaxed">
+                    <p className="text-xs sm:text-sm md:text-[19px]  leading-relaxed">
                       Our vision is to be a trusted civil construction partner in NSW recognized for our innovation, integrity, and excellence in client delivery. We aim for sustainable growth while preserving our family owned values of trust and transparency. By investing in our people, embracing new technology, and prioritizing safety and the environment, we strive to build a better future. Our goal is to create long-term client relationships and deliver infrastructure that strengthens communities, exceeds expectations, and sets new benchmarks for performance and professionalism in the industry.
 
                     </p>

@@ -52,7 +52,7 @@ export default function ContactForm() {
         <>
             <section
                 className="relative w-full bg-cover bg-center bg-no-repeat py-16 px-4 sm:px-6 lg:px-12"
-                style={{ backgroundImage: "url('/contact.webp')" }} // Replace with your image
+                style={{ backgroundImage: "url('/contact.webp')" }}
             >
                 {/* Dark overlay */}
                 <div className="absolute inset-0 bg-black/70 z-0" />
